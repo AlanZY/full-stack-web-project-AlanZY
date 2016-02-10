@@ -1,9 +1,11 @@
 
 .page-header
 {
-background-color:#9F79EE;
+background-color:#9400D3;
 height:82px; 
-width:auto}
+width:100%;
+margin: 0
+}
 
 
 .logo
@@ -14,7 +16,10 @@ margin-left:300px;
 width:50px
 }
 
-
+body
+{
+	margin:0;
+}
 
 header.page-header a{
 color:#F5FFFA;text-decoration:none
