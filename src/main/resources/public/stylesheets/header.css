@@ -8,7 +8,7 @@ margin: 0
 }
 
 
-.logo
+.header-logo
 {
 height:50px;
 margin-top:15px;
@@ -16,10 +16,7 @@ margin-left:300px;
 width:50px
 }
 
-body
-{
-	margin:0;
-}
+
 
 header.page-header a{
 color:#F5FFFA;text-decoration:none
@@ -50,7 +47,7 @@ background-color:#F5FFFA;color:#66615b
 
 
 
-nav{
+.header-nav{
 display:inline-block;
 font-size:17px;
 font-weight:bold;
@@ -60,7 +57,7 @@ text-transform:uppercase
 }
 
 
-ul
+.header-ul
 {
 width:500px;
 height:40px;
@@ -68,7 +65,7 @@ line-height:10px;
 padding:10px 30px
 }
 
-li
+.header-li
 {
 padding:0 20px;
 display:inline

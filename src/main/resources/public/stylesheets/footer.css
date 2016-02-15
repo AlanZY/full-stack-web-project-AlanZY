@@ -1,39 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta http-equiv="content-type" content="text/html;charset=utf-8">
-<title> footer </title>
 
-
-<style>
 #wapper{  
     position: relative;   
     height: auto;           
     min-height: 100%    
 }  
 .footer{  
-   position: absolute;  bottom: 0; 
+   position: absolute;  
+
+   bottom: 0; 
    left:0;   
    height: 100px;         
-   background-color:#9400D3;
+   
    width:100%;
    margin-right:0;
 
-   
 }  
 #main-content{  
    padding-bottom: 60px;  
 }  
 
-.logo
+.footer-logo
 {
+
 height:50px;
 width:50px;
 }
 
-.test{
-margin-left: 64px;
-}
+
 
 
 
@@ -51,7 +44,7 @@ text-align:center;
 {
 font-size:17px;
 font-family:Buxton Sketch;
-color: #FFFFFF;
+
 text-decoration:none;
 display:inline-block;
 line-height:60px;
@@ -70,7 +63,7 @@ text-decoration:none;
 }
 
 
-nav{
+.footer-nav{
 font-size:17px;
 font-weight:bold;
 margin-left:280px;
@@ -79,13 +72,13 @@ text-transform:lowercase
 }
 
 
-ul
+.footer-ul
 {
 width:500px;
 margin:0;
 }
 
-li
+.footer-li
 {
 padding:0 20px;
 display: block;
@@ -102,7 +95,7 @@ float:left;
 
 .made{
 line-height:60px;
-color:#FFFFFF;
+
 font-size:17px;
 font-weight:bold;
 display:inline-block;
@@ -131,46 +124,7 @@ margin-top:70px;
 .address{
 width:300px;
 font-size:11px;
-color:#FFFFFF;
+
 }
 
 
-</style>
-
-</head>
-<body>
-<div >  
-    test
-    <div>  
-    </div>  
-    test  
-    <div class="footer">  
-	    
-        <nav>
-            <div class="policyblock">
-              
-                <a href="#" class="policy">Policy</a>
-             
-            </div>
-        </nav>
-			
-		 
-		
-		<div class="logoblock">
-		    <div class="madeblock">
-	             <label class="made">MADE BY AlanZY</label>
-			</div>
-		     <a href="http://www.w3school.com.cn/cssref/pr_class_display.asp" ><img src="logo.png" class="logo" alt="logo"></a>
-             
-			
-		</div>
-		
-		<div class="addressblock">
-		<label class="address"> 135 N Bellefield Ave, Pittsburgh, PA 15260 </label>
-		</div>
-	
-	</div>
-	
-    </div>   
-</body>
-</html>
