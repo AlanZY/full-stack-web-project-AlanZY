@@ -20,22 +20,22 @@ height:500px;
   position: absolute;
   bottom: 150px;
   left: 100px;
-  color: #9400D3;
+  color: #ffffff;
   font-size: 56px;
   font-family: Buxton Sketch;
 }
 .footer{
-background-color:#9400D3;	
+background-color:#FFFFE0;	
 }
 
 .policy{
-	color: #FFFFFF;
+	color: #000000;
 	
 }
 
 .address{
-	color:#FFFFFF;
+	color:#000000;
 }
 .made{
-	color:#FFFFFF;
+	color:#000000;
 }

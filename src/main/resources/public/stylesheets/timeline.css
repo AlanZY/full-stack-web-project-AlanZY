@@ -2,7 +2,7 @@
 
 body {
 	
-	background-color: #AB82FF;
+	background-color: #FFFFFF;
 	margin:0
 }
 
@@ -43,8 +43,9 @@ body {
 .cd-container {
   /* this class is used to give a max-width to the element it is applied to, and center it horizontally when it reaches that max-width */
   width: 80%;
-  max-width: 170px;
-  margin: 0 auto;
+  max-width: 770px;
+  margin-top: 20px auto;
+  margin-left:14%;
 }
 
 .cd-container::after {
@@ -136,7 +137,7 @@ body {
 .cd-timeline-content {
   position: relative;
   margin-left: 60px;
-  background:#FFFFFF;
+  background:#FFFFE0;
   border-radius: 0.25em;
   padding: 1em;
   box-shadow: 0 3px 0 #ABABAB;
@@ -213,8 +214,8 @@ a.cd-read-more:hover{text-decoration:none; background-color: #ABABAB;  }
 }
 @media only screen and (min-width: 1170px) {
   .cd-timeline-content {
-    margin-left: 0;
-    padding: .8em;
+    margin-left: 0px;
+    padding: .7em;
     width: 45%;
   }
   .cd-timeline-content::before {
@@ -275,7 +276,7 @@ a.cd-read-more:hover{text-decoration:none; background-color: #ABABAB;  }
 
 .page-header
 {
-background-color:#9400D3;
+background-color:#FFFFE0;
 height:82px; 
 width:100%;
 margin: 0
@@ -293,33 +294,6 @@ width:50px
 body
 {
 	margin:0;
-}
-
-header.page-header a{
-color:#F5FFFA;text-decoration:none
-}
-
-header.page-header a:visited{
-color:#F5FFFA;
-text-decoration:none
-}
-
-header.page-header a:active,header.page-header a:hover{
-color:#030303;
-text-decoration:none
-}
-
-header.page-header .download-paper a,header.page-header .download-paper a:visited
-{
-border:2px solid #F5FFFA;
-border-radius:20px;
-color:#F5FFFA;
-padding:6px 14px
-}
-
-header.page-header .download-paper a:hover,header.page-header .download-paper a:visited:hover
-{
-background-color:#F5FFFA;color:#66615b
 }
 
 

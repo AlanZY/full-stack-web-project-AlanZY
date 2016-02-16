@@ -18,15 +18,10 @@ body{margin:0;}
   color: #6b6b6b;
   font-size: 43px;
   margin-left:25%;
-  color:#9400D3;
+  color:#000000;
     font-family: Buxton Sketch;
 }
-.help-block {
-  margin-bottom: 16px;
-  display: block;
-  color: #9b9b9b;
-  line-height: 1.8em;
-}
+
 .system-container .system-form {
   margin-top: 32px;
   padding-left: 130px;
@@ -218,13 +213,13 @@ body{margin:0;}
 
 
 .policy{
-	color:#9400D3;
+	color:#000000;
 	
 }
 
 .address{
-	color:#9400D3;
+	color:#000000;
 }
 .made{
-	color:#9400D3;
+	color:#000000;
 }

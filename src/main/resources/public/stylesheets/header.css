@@ -1,7 +1,7 @@
 
 .page-header
 {
-background-color:#9400D3;
+background-color:#FFFFE0;
 height:82px; 
 width:100%;
 margin: 0
@@ -18,31 +18,32 @@ width:50px
 
 
 
+
 header.page-header a{
-color:#F5FFFA;text-decoration:none
+color:#000000;text-decoration:none
 }
 
 header.page-header a:visited{
-color:#F5FFFA;
+color:#000000;
 text-decoration:none
 }
 
 header.page-header a:active,header.page-header a:hover{
-color:#030303;
+color:#EEAEEE;
 text-decoration:none
 }
 
 header.page-header .download-paper a,header.page-header .download-paper a:visited
 {
-border:2px solid #F5FFFA;
+border:2px solid #000000;
 border-radius:20px;
-color:#F5FFFA;
+color:#000000;
 padding:6px 14px
 }
 
 header.page-header .download-paper a:hover,header.page-header .download-paper a:visited:hover
 {
-background-color:#F5FFFA;color:#66615b
+background-color:#000000;color:#FFFFFF
 }
 
 
