@@ -1,5 +1,41 @@
+.pull-left{
+	margin: 9px 2% 0 0;
+	width: 80%;
+	height: 3px;
+}
 
 
+#html5_1abfqalti1rejmtm1d0f1m0rrp33{
+	font-size: 999px; 
+	opacity: 0; 
+	position: absolute; 
+	top: 0px; 
+    left: 0px; 
+	width: 100%; 
+	height: 100%;
+	
+}
+
+.fl{
+	width:auto;
+	height:auto;
+}
+
+#id-image-url1-pic{
+	width: 200px;
+}
+
+.moxie-shim-html5{
+	
+	position: absolute; 
+	top: 0px; 
+	left: 0px; 
+	width: 834px; 
+	height: 75px; 
+	overflow: hidden; 
+	z-index: 0;
+	
+}
 
 .label-checkbox label {
   display: block;

@@ -9,11 +9,12 @@
 <link rel="stylesheet" href="stylesheets/contact.css">
 
 <script src="js/login.js" type="text/javascript"></script>
-
-
-
 </head>
+
 <body id="body">
+
+
+<!-- header -->
 
 <header class="page-header">
 
@@ -22,37 +23,38 @@
          <a href="index.html" ><img src="picture/logo.png" class="header-logo" alt="logo"></a>
 
 		     <nav class="header-nav">
-            <ul class="header-ul">
-              <li class="header-li"><a href="recommended.html">recommended</a></li>
-              <li class="header-li"><a href="contact.html">contact</a></li>
-              <li class="download-paper header-li"><a href="#" onClick="show()">start</a>
-              </li>
-            </ul>
-          </nav>
+                 <ul class="header-ul">
+                    <li class="header-li"><a href="recommended.html">recommended</a></li>
+                    <li class="header-li"><a href="contact.html">contact</a></li>
+                    <li class="download-paper header-li"><a href="javascript:void(0);" onclick="show(event,'div2');">start</a>
+                    </li>
+                </ul>
+            </nav>
 
 
 </header>
+<!-- header  end -->
+
 
 <!-- login -->
 
-   <div id="div1" class="div1"></div>
 
-	 <div id="div2" class="div2">
+
+	 <div id="div2" class="div2" onclick="show(event,'div2');" style="display:none">
 	 
         <div class="login_sign">
 			
-			<div class="login_in_wrap_up" id="login_in_color">		  
-			<a class="form_title" href="#0" >login in</a>
-			</div>
-			<div class="sign_up_wrap_up" id="sign_up_color">	
-			<a class="form_title" href="#" onClick="sign_switch()">sign up</a>
-				        <!-- <label class="form-title"> sign in </label> -->
-		    </div>  
+			    <div class="login_in_wrap_up" id="login_in_color">		  
+			    <a class="form_title" href="#0" onClick="login_switch()">login in</a>
+			    </div>
+			    <div class="sign_up_wrap_up" id="sign_up_color">	
+			     <a class="form_title" href="#" onClick="sign_switch()">sign up</a>
+				 </div>  
+					
 					
 	        <div class="login_in" id='login_in'> 
 				<form class="cd-form" >
-				     
-					<p>
+				    <p>
 						<label class="form">E-mail</label>
 						<input class="full-width has-padding has-border" id="loginin-email" type="email" placeholder="E-mail">
 					</p>
@@ -61,8 +63,7 @@
 						<label class="form">Password</label>
 						<input class="full-width has-padding has-border" id="loginin-password" type="text" placeholder="Password">
 					</p>
-
-
+					
 					<p>
 						<input class="full-width login" type="submit" value="Login in">
 					</p>
@@ -95,30 +96,31 @@
 			</div>
 			
 	 
+     </div>
 </div>
-</div>
-
+<a href="#0" class="cd-close-form" onClick=hide()>Close</a>
 
 <!-- login end -->
+
 
 <!-- contact -->
 
 
 <div class="contact-container">
 
-<div >
-    <img class="contact-img" src="picture/contact.png" alt="contact">
-<h3 class="contact-text"> I am busy now <br />If you have any problem <br /> try to solve it yourself </h3>
+     <div >
+         <img class="contact-img" src="picture/contact.png" alt="contact">
+        <h3 class="contact-text"> I am busy now <br />If you have any problem <br /> try to solve it yourself </h3>
+
+     </div>
 
 </div>
-
-</div>
-
-
-
 
 
 <!-- contact end -->
+
+
+<!-- footer -->
 
 <footer>
 
@@ -141,13 +143,16 @@
 		    
 		</div>
 		
-		<div class="addressblock">
+		 <div class="addressblock">
 		<label class="address"> 135 N Bellefield Ave, Pittsburgh, PA 15260 </label>
 		</div>
 	
 	</div>
 	
 </div> 
-</footer>  
+</footer> 
+<!-- footer end  -->
+
+ 
 </body>
 </html>
