@@ -14,7 +14,6 @@
 
 
 
-
 </head>
 <body id="body">
 
@@ -42,12 +41,42 @@
    <div id="div1" class="div1"></div>
 
 	 <div id="div2" class="div2">
-      
-	  <div> 
-				<form class="cd-form">
-				    <div >
-				        <label class="form-title"> sign in </label>
-				    </div>   
+	 
+        <div class="login_sign">
+			
+			<div class="login_in_wrap_up" id="login_in_color">		  
+			<a class="form_title" href="#0" onClick="login_switch()" >login in</a>
+			</div>
+			<div class="sign_up_wrap_up" id="sign_up_color">	
+			<a class="form_title" href="#" onClick="sign_switch()">sign up</a>
+				        <!-- <label class="form-title"> sign in </label> -->
+		    </div>  
+					
+	        <div class="login_in" id='login_in'> 
+				<form class="cd-form" >
+				     
+					<p>
+						<label class="form">E-mail</label>
+						<input class="full-width has-padding has-border" id="loginin-email" type="email" placeholder="E-mail">
+					</p>
+
+					<p>
+						<label class="form">Password</label>
+						<input class="full-width has-padding has-border" id="loginin-password" type="text" placeholder="Password">
+					</p>
+
+
+					<p>
+						<input class="full-width login" type="submit" value="Login in">
+					</p>
+				</form>
+			</div>
+			
+	  
+	  
+	  
+	         <div class="sign_up" id='sign_up'> 
+				<form class="cd-form" >  
 					<p>
 						<label class="form">E-mail</label>
 						<input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
@@ -60,13 +89,14 @@
 
 
 					<p>
-						<input class="full-width login" type="submit" value="Login">
+						<input class="full-width login" type="submit" value="sign up">
 					</p>
 				</form>
 			</div>
 			
-	  </div>
-
+	 
+</div>
+</div>
 
 
 

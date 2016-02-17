@@ -44,7 +44,6 @@ input::-ms-clear, textarea::-ms-clear {
 }
 
 
-
 .cd-form {
   position: relative;
   margin: 1.4em 0;
@@ -132,14 +131,72 @@ input::-ms-clear, textarea::-ms-clear {
   overflow: hidden;
 }
 
+.login_sign{
+	width:100%;
+	height:20%;
+	margin-top:12px;
+	display:inline;
+	
+}
+
+.login_in{
+	background:#FFFFFFF;
+	display:none;
+}
+.change_sign{
+	position:absolute;
+    width:48%;
+    BACKGROUND: #3599ae;
+	margin-left:50%;
+	height:46px;
+	text-align:center;
+	
+}
+.change_login{
+	position:absolute;
+    width:48%;
+    BACKGROUND: #3599ae;
+	margin-left:0%;
+	height:46px;
+	text-align:center;
+	
+}
 
 
-.form-title{
-text-align:center;
+
+
+.login_in_wrap_up{
+	
+	width:48%;
+	height:46px;
+	margin-left:0;
+	float:left;
+	text-align:center;
+	
+}
+
+.sign_up_wrap_up{
+	
+	width:48%;
+	height:46px;
+	text-align:center;
+	margin-left:50%;
+}
+
+
+
+
+.form_title{
+
 font-weight:bold;
 font-family:Buxton Sketch;
 text-transform:uppercase;
-font-size: 28px;
+font-size: 30px;
+text-decoration:none;
+list-style-type:none;
+display:inline;
+padding: 40px;
+text-decoration:none;
 color:#FFFFFF;
 }
 
