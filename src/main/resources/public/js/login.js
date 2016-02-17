@@ -24,15 +24,17 @@ function login_switch(){
 }  
 
 var url = '#'; 
-function show(evt,o){ 
+function show(evt,div2){ 
 
-evt.stopPropagation?evt.stopPropagation():evt.cancelBubble=true;
-var o = document.getElementById(o); 
-o.style.display = ""; 
+if (evt.stopPropagation)    evt.stopPropagation();
+ if (evt.cancelBubble!==null) evt.cancelBubble = true;
+document.getElementById('div2').style.display = "";
+
 } 
-function hide(o){ 
-var o = document.getElementById(o); 
-o.style.display = "none"; 
+function hide(div2){ 
+document.getElementById('div2').style.display = "none"; 
 window.location = url; 
 } 
-document.onclick=function(){hide('div2');}
+document.onclick=function()
+{hide('div2');
+};
