@@ -140,33 +140,54 @@ input::-ms-clear, textarea::-ms-clear {
 }
 
 .login_in{
-	background:#FFFFFFF;
+ 
+
+}
+
+
+.sign_up{
+	
 	display:none;
 }
-.change_sign{
-	position:absolute;
+
+
+.sign_up_appear{
+	margin-right:0;
+
     width:48%;
     BACKGROUND: #3599ae;
-	margin-left:50%;
+	margin-left:54%;
 	height:46px;
 	text-align:center;
-	
-}
-.change_login{
-	position:absolute;
-    width:48%;
-    BACKGROUND: #3599ae;
-	margin-left:0%;
-	height:46px;
-	text-align:center;
-	
+	margin-top:0;
+	float:left;
 }
 
 
+.hide_login{ 
+	display:none;
+}
 
+.hide_login_color{
+	width:48%;
+	height:46px;
+	margin-left:0;
+	float:left;
+	text-align:center;
+}
+
+.sign_appear_color
+{
+	width:48%;
+	height:46px;
+	text-align:center;
+	margin-left:52%;
+	BACKGROUND: #3599ae;
+}
 
 .login_in_wrap_up{
 	
+	BACKGROUND: #3599ae;
 	width:48%;
 	height:46px;
 	margin-left:0;
@@ -180,7 +201,8 @@ input::-ms-clear, textarea::-ms-clear {
 	width:48%;
 	height:46px;
 	text-align:center;
-	margin-left:50%;
+	margin-left:48%;
+	
 }
 
 
