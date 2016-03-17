@@ -1,7 +1,7 @@
 
 
 body {
-	
+
 	background-color: #FFFFFF;
 	margin:0
 }
@@ -14,14 +14,15 @@ body {
   padding: 4em 4em;
   margin-top: 0;
   margin-bottom: 2em;
-  margin:0
+  margin:0;
+	z-index:1;
 }
 .cd-timeline::before {
   /* this is the vertical line */
   content: '';
   position: absolute;
   top: 0;
-  left: 49px; 
+  left: 78px;
   height: 100%;
   width: 6px;
   background: #9400D3;
@@ -173,7 +174,7 @@ body {
 }
 
 .no-touch .cd-timeline-content .cd-read-more:hover {
-  background-color: #bac4cb;  
+  background-color: #bac4cb;
 }
 
 
@@ -277,7 +278,7 @@ a.cd-read-more:hover{text-decoration:none; background-color: #ABABAB;  }
 .page-header
 {
 background-color:#FFFFE0;
-height:82px; 
+height:82px;
 width:100%;
 margin: 0
 }
@@ -324,5 +325,107 @@ display:inline
 
 .cd-read-more{
 	text-decoration:none;
-	
+
+}
+
+.change-title{
+	width:200px;
+	height:40px;
+	margin-left: 170px;
+	font-size:30px;
+	color:#FFFFFF;
+font-weight:bold;
+margin-bottom:10px;
+}
+
+.form-timeline{
+	marin-top:0;
+text-align:left;
+font-weight:bold;
+font-size: 20px;
+color:#FFFFFF;
+}
+
+.div_timeline {
+  position: absolute;
+  width: 400px;
+  height:460px;
+  background: #919191;
+  cursor: auto;
+  border-radius: 0.25em;
+  margin-left:30%;
+  z-index:1;
+
+}
+
+textarea{
+	resize: none;
+	width: 335px;
+	height:180px;
+}
+
+
+.change-form {
+
+	 padding-top: 0;
+	 padding-left: 2em;
+	 padding-right: 2em;
+	 padding-bottom: 2em;
+}
+.change-form:first-child {
+  margin-top: 0;
+}
+.cd-form:last-child {
+  margin-bottom: 0;
+}
+
+
+.change-form input {
+  margin: 0;
+  padding: 0;
+  border-radius: 0.25em;
+}
+.change-form input.full-width {
+  width: 90%;
+}
+.change-form input.full-width-content {
+  width: 90%;
+	height:180px;
+}
+
+.change-form input.has-padding {
+  padding: 12px 20px 12px 10px;
+}
+.change-form input.has-border {
+  border: 1px solid #d2d8d8;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+}
+
+
+
+.change-form input[type=submit] {
+  padding: 16px 0;
+  cursor: pointer;
+  background: #A2B5CD;
+  color: #FFF;
+  font-weight: bold;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  margin-left:5%;
+}
+
+.login
+{
+font-weight:bold;
+font-size: 15px;
+color:#FFFFFF;
+
 }

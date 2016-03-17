@@ -76,6 +76,54 @@ public class Main {
       }
     }, new FreeMarkerEngine());
 
+
+
+
+
+            get("/test", (req, res) -> {
+              ArrayList<String> users = new ArrayList<String>();
+              users.add("John Doe");
+              users.add("Tony Doe");
+              users.add("test one");
+
+              Map<String, Object> attributes = new HashMap<>();
+              attributes.put("users", users);
+
+
+               return new ModelAndView(attributes, "test.ftl");
+            }, new FreeMarkerEngine());
+
+            get("/test1", (req, res) -> {
+              ArrayList<String> users = new ArrayList<String>();
+              users.add("John Doe");
+              users.add("Tony Doe");
+              users.add("test one");
+
+              Map<String, Object> attributes = new HashMap<>();
+              attributes.put("users", users);
+
+
+               return new ModelAndView(attributes, "test1.ftl");
+            }, new FreeMarkerEngine());
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   }
+
 
 }

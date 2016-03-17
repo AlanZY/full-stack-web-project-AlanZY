@@ -21,7 +21,7 @@ input::-ms-clear, textarea::-ms-clear {
   cursor: auto;
   border-radius: 0.25em;
   margin-left:30%;
-  z-index:1;
+  z-index:3;
 }
 
 
@@ -29,7 +29,7 @@ input::-ms-clear, textarea::-ms-clear {
 
   margin: 1.4em 0;
    padding: 2em;
-  
+
 }
 .cd-form:first-child {
   margin-top: 0;
@@ -118,7 +118,7 @@ input::-ms-clear, textarea::-ms-clear {
 	height:20%;
 	margin-top:12px;
 	display:inline;
-	
+
 }
 
 .login_in{
@@ -127,7 +127,7 @@ input::-ms-clear, textarea::-ms-clear {
 
 
 .sign_up{
-	
+
 	display:none;
 }
 
@@ -145,12 +145,12 @@ input::-ms-clear, textarea::-ms-clear {
 }
 
 
-.hide_login{ 
+.hide_login{
 	display:none;
 }
 
 .hide_login_color{
-	width:48%;
+	width:52%;
 	height:46px;
 	margin-left:0;
 	float:left;
@@ -167,23 +167,23 @@ input::-ms-clear, textarea::-ms-clear {
 }
 
 .login_in_wrap_up{
-	
+
 	BACKGROUND: #3599ae;
-	width:48%;
+	width:52%;
 	height:46px;
-	margin-left:0;
+	margin-left:0px;
 	float:left;
 	text-align:center;
-	
+
 }
 
 .sign_up_wrap_up{
-	
+
 	width:48%;
 	height:46px;
 	text-align:center;
-	margin-left:48%;
-	
+	margin-left:50%;
+
 }
 
 
@@ -194,7 +194,7 @@ input::-ms-clear, textarea::-ms-clear {
 font-weight:bold;
 font-family:Buxton Sketch;
 text-transform:uppercase;
-font-size: 30px;
+font-size: 25px;
 text-decoration:none;
 list-style-type:none;
 display:inline;
@@ -208,16 +208,16 @@ text-align:left;
 font-weight:bold;
 font-family:Buxton Sketch;
 text-transform:uppercase;
-font-size: 20px;
+font-size: 25px;
 color:#FFFFFF;
 }
 
 .login
-{ 
+{
 font-weight:bold;
 font-family:Buxton Sketch;
 text-transform:uppercase;
-font-size: 20px;
+font-size: 25px;
 color:#FFFFFF;
 
 }
@@ -231,20 +231,8 @@ color:#FFFFFF;
   height: 40px;
   right: 0;
   top: -40px;
-  
+
   text-indent: 100%;
   white-space: nowrap;
   overflow: hidden;
 }
-
-
-
-
-
-
-
-
-
-
-
-
