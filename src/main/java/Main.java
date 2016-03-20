@@ -93,7 +93,20 @@ public class Main {
                return new ModelAndView(attributes, "test.ftl");
             }, new FreeMarkerEngine());
 
-            get("/test1", (req, res) -> {
+            get("/ti", (req, res) -> {
+              ArrayList<String> users = new ArrayList<String>();
+              users.add("John Doe");
+
+
+              Map<String, Object> attributes = new HashMap<>();
+              attributes.put("users", users);
+
+
+               return new ModelAndView(attributes, "ti.ftl");
+            }, new FreeMarkerEngine());
+
+
+            get("/user", (req, res) -> {
               ArrayList<String> users = new ArrayList<String>();
               users.add("John Doe");
               users.add("Tony Doe");
@@ -103,9 +116,8 @@ public class Main {
               attributes.put("users", users);
 
 
-               return new ModelAndView(attributes, "test1.ftl");
+               return new ModelAndView(attributes, "user.ftl");
             }, new FreeMarkerEngine());
-
 
 
 

@@ -45,17 +45,18 @@
 
 <!-- timeline -->
 
-<section class="cd-timeline cd-container" >
+<section class="cd-timeline cd-container" id="section">
 	<div class="cd-timeline-block">
-		<div class="cd-timeline-img cd-picture">
+		<div class="cd-timeline-img cd-picture" id="image1">
 
 		</div>
 
-		<div class="cd-timeline-content">
+		<div class="cd-timeline-content" id="1">
 			<h2>test1 sport</h2>
 			<p>content sport</p>
 
-			<a href="#" class="cd-read-more" onClick="edit()">edit</a>
+      <a href="javascript:void(0);" id="button1" class="cd-read-more" onclick="Edit(this.id)" >edit</a>
+		  <a href="javascript:void(0);" class="cd-read-more" onclick="show_change(event,'div_timeline');">add</a>
 			<span class="cd-date">2015-01-06</span>
 		</div>
 
@@ -85,7 +86,7 @@
 			<h2>test3 EXERCISE</h2>
 			<p>content EXERCISE</p>
 
-      <a href="javascript:void(0);" class="cd-read-more" onclick="show_change(event,'div_timeline');">edit</a>
+      <a href="#" class="cd-read-more" onclick="show_change(event,'div_timeline');">edit</a>
 		<!--  <a href="#" class="cd-read-more" onClick="edit()">edit</a>   -->
 			<span class="cd-date">2015-03-06</span>
 	    </div>
@@ -100,21 +101,39 @@
 
 
 <div class="login_in" id='login_in'>
-  <label class="change-title">change</label>
+  <label class="change-title">CHANGE</label>
     <form class="change-form" >
+       <div>
+       <br>
+      <div class="selection_div"  >
+
+
+        <select id="select_color" onchange="change_color()" >
+        <option>red</option>
+        <option>blue</option>
+        <option>yellow</option>
+        <option>purple</option>
+        </select>
+      </div>
+
+      <div class="sample" id="sample">   </div>
+      <br>
+      </div>
+
+
          <p>
         <label class="form-timeline">event</label>
-        <input class="full-width has-padding has-border" id="change-event" type="event" placeholder="event">
+        <input class="full-width has-padding has-border" id="change-event"  type="text" placeholder="event">
       </p>
 
       <p>
         <label class="form-timeline">content</label>
-        <textarea class="full-width-content has-padding has-border" id="change-content" type="content" placeholder="content"></textarea>
+        <textarea class="full-width-content has-padding has-border" id="change-content"  placeholder="content"></textarea>
       </p>
 
 
       <p>
-        <input class="full-width change-submit" type="submit" value="Submit">
+        <input class="  change-button" type="button" onclick="addItem()" value="Submit">
       </p>
     </form>
   </div>

@@ -142,6 +142,10 @@ body {
   border-radius: 0.25em;
   padding: 1em;
   box-shadow: 0 3px 0 #ABABAB;
+  word-wrap:break-word;
+ word-break:break-all;
+display:block;
+
 }
 
 .cd-timeline-content:after {
@@ -155,7 +159,7 @@ body {
 }
 .cd-timeline-content p, .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
   font-size: 15px;
-  font-size: 0.8125rem;
+ 
 }
 .cd-timeline-content .cd-read-more, .cd-timeline-content .cd-date {
   display: inline-block;
@@ -331,7 +335,7 @@ display:inline
 .change-title{
 	width:200px;
 	height:40px;
-	margin-left: 170px;
+	margin-left: 140px;
 	font-size:30px;
 	color:#FFFFFF;
 font-weight:bold;
@@ -372,6 +376,7 @@ textarea{
 	 padding-right: 2em;
 	 padding-bottom: 2em;
 }
+
 .change-form:first-child {
   margin-top: 0;
 }
@@ -390,12 +395,13 @@ textarea{
 }
 .change-form input.full-width-content {
   width: 90%;
-	height:180px;
+  height:180px;
 }
 
 .change-form input.has-padding {
   padding: 12px 20px 12px 10px;
 }
+
 .change-form input.has-border {
   border: 1px solid #d2d8d8;
   -webkit-appearance: none;
@@ -406,10 +412,9 @@ textarea{
 }
 
 
-
-.change-form input[type=submit] {
+.change-button
+ {
   padding: 16px 0;
-  cursor: pointer;
   background: #A2B5CD;
   color: #FFF;
   font-weight: bold;
@@ -419,7 +424,10 @@ textarea{
   -ms-appearance: none;
   -o-appearance: none;
   appearance: none;
-  margin-left:5%;
+  marin-left:5px;
+  height:40px;
+  width:100%;
+  
 }
 
 .login
@@ -428,4 +436,40 @@ font-weight:bold;
 font-size: 15px;
 color:#FFFFFF;
 
+}
+
+.content{
+font-size: 15px;
+}
+
+
+
+.selection_div{
+      width: 100px;
+      height: 34px;
+      overflow: hidden;
+      background-color: #000000;
+      background: url("http://images.cnblogs.com/cnblogs_com/shishm/201203/20120302110411201.jpg") no-repeat right #ddd;
+      float:left;
+}
+
+
+
+.selection_div select{
+  background: transparent;
+   width: 100px;
+   padding: 5px;
+   font-size: 16px;
+   border: 1px solid #ccc;
+   height: 34px;
+   -webkit-appearance: none;
+}
+
+
+.sample{
+width:30px;
+height:30px;
+margin-left:150px;
+background-color:#FFC1C1;
+float:left;
 }

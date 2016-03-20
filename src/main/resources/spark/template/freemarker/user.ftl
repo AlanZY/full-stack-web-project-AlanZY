@@ -3,8 +3,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html;charset=utf-8">
 <title> userpage </title>
-
-<link rel="stylesheet" href="/stylesheets/footer.css">
+ <link rel="stylesheet" href="/stylesheets/footer.css">
 <link rel="stylesheet" href="/stylesheets/header.css">
 <link rel="stylesheet" href="/stylesheets/userpage.css">
 
@@ -18,7 +17,7 @@
  <!-- header  -->
 <header class="page-header">
 
-         <a href="index.html" ><img src="/picture/logo.png" class="header-logo" alt="logo"></a>
+         <a href="/index.html" ><img src="picture/logo.png" class="header-logo" alt="logo"></a>
 
 		     <nav class="header-nav">
                  <ul class="header-ul">
@@ -69,14 +68,13 @@
         <div class="personal-container">
 
             <div class="no-data-wp br-4">
-
-
                 <div class="tip-wp">
+                    <i ></i>
+                    <span>list the timelines you built </span>
                     <#list users as user>
                     <li> ${user} </li>
                       </#list>
                 </div>
-
             </div>
         </div>
     </div>
