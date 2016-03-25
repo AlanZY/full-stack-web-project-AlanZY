@@ -42,11 +42,11 @@ public class Main {
     });
 
 	/*
-    get("/", (request, response) -> {
+    get("/user", (request, response) -> {
             Map<String, Object> attributes = new HashMap<>();
             attributes.put("message", "Hello World!");
 
-            return new ModelAndView(attributes, "index.ftl");
+            return new ModelAndView(attributes, "user.ftl");
         }, new FreeMarkerEngine());
 	*/
 
@@ -106,7 +106,7 @@ public class Main {
             }, new FreeMarkerEngine());
 
 
-            get("/user", (req, res) -> {
+            get("/", (req, res) -> {
               ArrayList<String> users = new ArrayList<String>();
               users.add("John Doe");
               users.add("Tony Doe");

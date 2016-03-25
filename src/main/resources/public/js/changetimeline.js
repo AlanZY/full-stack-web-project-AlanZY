@@ -1,10 +1,12 @@
 
 var url = '#';
-function show_change(evt,div_timeline){
-
+var addid;
+function show_add(evt,div_timeline,id){
+   addid=document.getElementById(id).parentElement.id;
 if (evt.stopPropagation)    evt.stopPropagation();
  if (evt.cancelBubble!==null) evt.cancelBubble = true;
 document.getElementById('div_timeline').style.display = "";
+
 
 }
 
@@ -16,6 +18,41 @@ window.location = url;
 document.onclick=function()
 {hide('div2_timeline');
 };
+
+
+
+var url = '#';
+var editid;
+function show_edit(evt,div_timeline_edit,id){
+   editid=document.getElementById(id).parentElement.id;
+if (evt.stopPropagation)    evt.stopPropagation();
+ if (evt.cancelBubble!==null) evt.cancelBubble = true;
+document.getElementById('div_timeline_edit').style.display = "";
+
+}
+
+function hide(div_timeline_edit){
+document.getElementById('div_timeline_edit').style.display = "none";
+window.location = url;
+}
+
+document.onclick=function()
+{hide('div2_timeline_edit');
+};
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 function change_color()
@@ -42,6 +79,33 @@ function change_color()
 }
 
 
+function change_color_edit()
+{
+    var select=document.getElementById("select_color_edit");
+    var color=select.selectedIndex;
+    var set=document.getElementById("sample_edit");
+    if(color===0)
+    {
+        set.setAttribute('style','background-color:#FFC1C1');
+    }
+    else if(color===1)
+    {
+        set.setAttribute('style','background-color:#BFEFFF');
+    }
+    else if(color===2)
+    {
+        set.setAttribute('style','background-color:#FFFF00');
+    }
+    else
+    {
+        set.setAttribute('style','background-color:#EE7AE9');
+    }
+}
+
+
+
+
+
 
 //set text
 var uniqueId = function() {
@@ -50,6 +114,9 @@ var uniqueId = function() {
 
 function addItem()
 {
+    var test2;
+    test2=addid;
+  //  alert(document.getElementById(test).parentElement.id);
 
     var div_content=document.createElement('div');
     var div_c_id=uniqueId();
@@ -122,19 +189,42 @@ function addItem()
 
 
 
-
-
-
-
-
 }
 
 
 
 
-function Edit(id)
+function Edit()
 {
-  var s;
-  s=document.getElementById(id).parentElement.id;
-  alert(s);
+  var test;
+  test=editid;
+  var titleToedit=document.getElementById("change-event-edit").value;
+  var contentToedit=document.getElementById("change-content-edit").value;
+  var divid=document.getElementById(test).childNodes;
+  divid[1].innerHTML=titleToedit;
+  divid[3].innerHTML=contentToedit;
+
+  var parent_id=document.getElementById(test).parentElement.id;
+  var parent_div=document.getElementById(parent_id).childNodes;
+  var image_edit_id=parent_div[1].id;
+  var image_edit=document.getElementById(image_edit_id);
+  var select_edit=document.getElementById("select_color_edit");
+  var color_edit=select_edit.selectedIndex;
+  if(color_edit===0)
+  {
+      image_edit.setAttribute('style','background-color:#FFC1C1');
+  }
+  else if(color_edit===1)
+  {
+      image_edit.setAttribute('style','background-color:#BFEFFF');
+  }
+  else if(color_edit===2)
+  {
+      image_edit.setAttribute('style','background-color:#FFFF00');
+  }
+  else
+  {
+      image_edit.setAttribute('style','background-color:#EE7AE9');
+  }
+
 }

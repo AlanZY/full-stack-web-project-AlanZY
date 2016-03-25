@@ -13,6 +13,28 @@
 
 <script src="js/changetimeline.js" type="text/javascript"></script>
 <script src="js/login.js" type="text/javascript"></script>
+<script>
+$(function()
+{
+  $.ajax
+  (
+    {
+      url:"/api/about",
+      success: function(result)
+      {
+        var data=json.parse(result);
+        $("#2.1").html(result);
+      }
+    }
+  );
+});
+
+</script>
+
+
+
+
+
 
 </head>
 <!-- left: connect with database
@@ -46,17 +68,19 @@
 <!-- timeline -->
 
 <section class="cd-timeline cd-container" id="section">
-	<div class="cd-timeline-block">
+
+
+	<div class="cd-timeline-block" id="block1">
 		<div class="cd-timeline-img cd-picture" id="image1">
 
 		</div>
 
-		<div class="cd-timeline-content" id="1">
-			<h2>test1 sport</h2>
-			<p>content sport</p>
+		<div class="cd-timeline-content" id="content1">
+			<h2 id="1.1">test1 sport</h2>
+			<p id="1.2">content sport</p>
 
-      <a href="javascript:void(0);" id="button1" class="cd-read-more" onclick="Edit(this.id)" >edit</a>
-		  <a href="javascript:void(0);" class="cd-read-more" onclick="show_change(event,'div_timeline');">add</a>
+      <a href="javascript:void(0);" id="button1" class="cd-read-more" onclick="show_edit(event, 'div_timeline_edit', this.id)" >edit</a>
+		  <a href="javascript:void(0);" id="button2" class="cd-read-more" onclick="show_add(event,'div_timeline', this.id);">add</a>
 			<span class="cd-date">2015-01-06</span>
 		</div>
 
@@ -68,25 +92,28 @@
 
 		</div>
 
-		<div class="cd-timeline-content">
-			<h2>test2 EXERCISE</h2>
-			<p>content EXERCISE</p>
+		<div class="cd-timeline-content" id="content2">
+			<h2 id="2.1">test2 EXERCISE</h2>
+			<p id="2.2">content EXERCISE</p>
 
-			<a href="#" class="cd-read-more" onClick="edit()">edit</a>
+			<a href="#" class="cd-read-more" onClick="edit()">add</a>
 			<span class="cd-date">2015-02-06</span>
 	    </div>
 	</div>
+
+
 
 		<div class="cd-timeline-block" >
 	    <div class="cd-timeline-img cd-movie">
 
 		</div>
 
-		<div class="cd-timeline-content">
-			<h2>test3 EXERCISE</h2>
-			<p>content EXERCISE</p>
+		<div class="cd-timeline-content" id="contnet3">
+			<h2 id="3.1">test3 EXERCISE</h2>
+			<p id="3.2">content EXERCISE</p>
 
-      <a href="#" class="cd-read-more" onclick="show_change(event,'div_timeline');">edit</a>
+      <a href="#" class="cd-read-more" onclick="show_add(event,'div_timeline');">add</a>
+      <a href="#" class="cd-read-more" onclick="show_edit(event,'div_timeline_edit');">edit</a>
 		<!--  <a href="#" class="cd-read-more" onClick="edit()">edit</a>   -->
 			<span class="cd-date">2015-03-06</span>
 	    </div>
@@ -96,12 +123,9 @@
 </section>
 <!-- timeline end -->
 
- <div id="div_timeline" class="div_timeline" onclick="show_change(event,'div_timeline');" style="display:none">
-
-
-
+ <div id="div_timeline" class="div_timeline"  style="display:none">
 <div class="login_in" id='login_in'>
-  <label class="change-title">CHANGE</label>
+  <label class="change-title">Add</label>
     <form class="change-form" >
        <div>
        <br>
@@ -141,8 +165,57 @@
 </div>
 
 
+
+
+<!-- change the content -->
+
+ <div id="div_timeline_edit" class="div_timeline"  style="display:none">
+<div class="login_in" id='login_in_1'>
+  <label class="change-title">EDIT</label>
+    <form class="change-form" >
+       <div>
+       <br>
+      <div class="selection_div"  >
+
+
+        <select id="select_color_edit" onchange="change_color_edit()" >
+        <option>red</option>
+        <option>blue</option>
+        <option>yellow</option>
+        <option>purple</option>
+        </select>
+      </div>
+
+      <div class="sample" id="sample_edit">   </div>
+      <br>
+      </div>
+
+
+         <p>
+        <label class="form-timeline">event</label>
+        <input class="full-width has-padding has-border" id="change-event-edit"  type="text" placeholder="event">
+      </p>
+
+      <p>
+        <label class="form-timeline">content</label>
+        <textarea class="full-width-content has-padding has-border" id="change-content-edit"  placeholder="content"></textarea>
+      </p>
+
+
+      <p>
+        <input class="change-button" type="button" onclick="Edit()" value="Change">
+      </p>
+    </form>
+  </div>
+
+</div>
+
+
+
+
 <!-- change timeline -->
 
+<p id="demo"></p>
 
 
 
