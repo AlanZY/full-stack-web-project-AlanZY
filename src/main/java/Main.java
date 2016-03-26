@@ -1,4 +1,4 @@
-
+import com.google.gson.Gson;
 
 import java.sql.*;
 import java.util.HashMap;
@@ -28,6 +28,8 @@ import com.heroku.sdk.jdbc.DatabaseUrl;
 public class Main {
 
   public static void main(String[] args) {
+
+     Gson gson = new Gson();
 
     port(Integer.valueOf(System.getenv("PORT")));
     staticFileLocation("/public");
@@ -120,7 +122,12 @@ public class Main {
             }, new FreeMarkerEngine());
 
 
-
+            get("/api/about", (req, res) -> {
+                    Map<String, Object> data = new HashMap<>();
+                    data.put("title", "sport");
+                    data.put("content", "Brian");
+                    return data;
+                }, gson::toJson);
 
 
 
