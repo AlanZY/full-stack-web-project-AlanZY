@@ -6,14 +6,14 @@
 
 
 #html5_1abfqalti1rejmtm1d0f1m0rrp33{
-	font-size: 999px; 
-	opacity: 0; 
-	position: absolute; 
-	top: 0px; 
-    left: 0px; 
-	width: 100%; 
+	font-size: 999px;
+	opacity: 0;
+	position: absolute;
+	top: 0px;
+    left: 0px;
+	width: 100%;
 	height: 100%;
-	
+
 }
 
 .fl{
@@ -26,15 +26,15 @@
 }
 
 .moxie-shim-html5{
-	
-	position: absolute; 
-	top: 0px; 
-	left: 0px; 
-	width: 834px; 
-	height: 75px; 
-	overflow: hidden; 
+
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 834px;
+	height: 75px;
+	overflow: hidden;
 	z-index: 0;
-	
+
 }
 
 .label-checkbox label {
@@ -48,19 +48,21 @@ body{margin:0;}
   margin-left:20%;
   height:500px;
   width:700px;
-  
+
 }
 .system-container h1 {
   color: #6b6b6b;
-  font-size: 43px;
-  margin-left:25%;
+  font-size: 32px;
+  margin-left:40%;
   color:#000000;
     font-family: Buxton Sketch;
 }
 
+
+
 .system-container .system-form {
   margin-top: 32px;
-  padding-left: 130px;
+  padding-left: 245px;
   width: 100%;
 }
 .system-container .input-group {
@@ -244,13 +246,13 @@ body{margin:0;}
 }
 
 .footer{
-	background-color:#FFFFFF;	
+	background-color:#FFFFFF;
 }
 
 
 .policy{
 	color:#000000;
-	
+
 }
 
 .address{
@@ -259,3 +261,18 @@ body{margin:0;}
 .made{
 	color:#000000;
 }
+
+
+.sumbit_profile{
+  padding: 16px 0;
+  background: #A2B5CD;
+  color: #FFF;
+  font-weight: bold;
+  border: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  width:100%;
+  }

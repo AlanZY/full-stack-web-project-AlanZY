@@ -71,9 +71,9 @@
                 <div class="tip-wp">
                     <i ></i>
                     <span>list the timelines you built </span>
-                    <#list users as user>
-                    <li> ${user} </li>
-                      </#list>
+                 
+                    <h3> ${users[2]} </h3>
+                    <h3> ${text[1]} </h3>
                 </div>
             </div>
         </div>

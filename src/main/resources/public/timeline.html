@@ -20,12 +20,28 @@ $(function()
   $.ajax
   (
     {
-      url:"/api/about",
+      url:"/api/timeline_info",
       success: function(result)
       {
         var result=JSON.parse(result);
-        $("#h1").html(result.title);
-        $("#p1").html(result.content);
+        $("#h1").html(result.title1);
+        $("#p1").html(result.content1);
+        var image1=document.getElementById("image1");
+        image1.setAttribute("style",result.image1);
+      //  $("#image1").setAttribute("style",(result.image1));
+        $("#p1").html(result.content1);
+        $("#h2").html(result.title2);
+        $("#p2").html(result.content2);
+        $("#h3").html(result.title3);
+        $("#p3").html(result.content3);
+        var image2=document.getElementById("image2");
+        image2.setAttribute("style",result.image2);
+        var image3=document.getElementById("image3");
+        image3.setAttribute("style",result.image3);
+
+        $("#header_username").html(result.header_username);
+
+
       }
     }
   );
@@ -53,7 +69,7 @@ $(function()
                  <ul class="header-ul">
                      <li class="header-li"><a href="recommended.html">recommended</a></li>
                      <li class="header-li"><a href="contact.html">contact</a></li>
-                     <li class="download-paper header-li"><a href="userpage.html">username</a>
+                     <li class="download-paper header-li"><a href="userpage.html"   id="header_username">username</a>
                      </li>
                  </ul>
             </nav>
@@ -61,18 +77,13 @@ $(function()
 </header>
 <!-- header end -->
 
-<div id="testajax"> srhrtwrg
-</div>
-
-
-
 <!-- timeline -->
 
 <section class="cd-timeline cd-container" id="section">
 
 
 	<div class="cd-timeline-block" id="block1">
-		<div class="cd-timeline-img cd-picture" id="image1">
+		<div class="cd-timeline-img " id="image1">
 
 		</div>
 
@@ -89,11 +100,11 @@ $(function()
 
 
 	<div class="cd-timeline-block">>
-	    <div class="cd-timeline-img cd-movie">
+	    <div class="cd-timeline-img "  id="image2" >
 
 		</div>
 
-		<div class="cd-timeline-content" id="content2">
+		<div class="cd-timeline-content" id="content2"  >
 			<h2 id="h2">test2 EXERCISE</h2>
 			<p id="p2">content EXERCISE</p>
 
@@ -105,7 +116,7 @@ $(function()
 
 
 		<div class="cd-timeline-block" >
-	    <div class="cd-timeline-img cd-movie">
+	    <div class="cd-timeline-img "  id="image3">
 
 		</div>
 

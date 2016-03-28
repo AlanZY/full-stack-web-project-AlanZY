@@ -25,7 +25,7 @@
 
 		     <nav class="header-nav">
                  <ul class="header-ul">
-                    <li class="header-li"><a href="recommended.html">recommended</a></li>
+                    <li class="header-li"><a href="recommendation">recommended</a></li>
                     <li class="header-li"><a href="contact.html">contact</a></li>
                     <li class="download-paper header-li"><a href="javascript:void(0);" onclick="show(event,'div2');">start</a>
                     </li>
@@ -113,139 +113,31 @@
 
 <div class="recommended-container">
         <ul class="recommended" >
+
+
+<#list 0..users?size-1 as i>
+
+
             <li class="recommended-list">
 			    <div class="recommended-cover-wp">
 
-			        <img class="recommended-img" src="picture/test.jpg" alt="recommended">
-					<div class="mask"></div>
-					<h3 class="recommended-text"> test </h3>
+			        <img class="recommended-img" src=${images[i]} alt="recommended">
+
+
+				  	<div class="mask"></div>
+        <#if   i<3>
+	     <h3 class="recommended-text" style="color:#FFAEB9" > ${users[i]} </h3>
+       <#else>
+		 			<h3 class="recommended-text"   > ${users[i]} </h3>
+      </#if>
+
 			        <a href="https://www.google.com" ></a>
-
 		        </div>
-
 		    </li>
-
-
-			<li class="recommended-list">
-
-		        <div class="recommended-cover-wp">
-
-			        <img class="recommended-img" src="picture/test.jpg" alt="recommended">
-					<div class="mask"></div>
-					<h3 class="recommended-text"> test </h3>
-			        <a href="#" ></a>
-
-		        </div>
-
-
-            </li>
+</#list>
 
 
 
-			<li class="recommended-list">
-
-		        <div class="recommended-cover-wp">
-
-			        <img class="recommended-img" src="picture/test.jpg" alt="recommended">
-					<div class="mask"></div>
-					<h3 class="recommended-text"> test </h3>
-			       <a href="#" ></a>
-
-
-                </div>
-
-            </li>
-
-			<li class="recommended-list">
-
-		        <div class="recommended-cover-wp">
-
-			        <img class="recommended-img" src="picture/test.jpg" alt="recommended">
-					<div class="mask"></div>
-					<h3 class="recommended-text"> test </h3>
-			        <a href="#" ></a>
-
-
-                </div>
-
-            </li>
-
-
-
-			<li class="recommended-list">
-
-		        <div class="recommended-cover-wp">
-
-			        <img class="recommended-img" src="picture/test.jpg" alt="recommended">
-					<div class="mask"></div>
-					<h3 class="recommended-text"> test </h3>
-			        <a href="#" ></a>
-
-
-                </div>
-
-            </li>
-
-
-
-			<li class="recommended-list">
-
-		        <div class="recommended-cover-wp">
-
-			        <img class="recommended-img" src="picture/test.jpg" alt="recommended">
-					<div class="mask"></div>
-					<h3 class="recommended-text"> test </h3>
-			        <a href="#" ></a>
-
-
-                </div>
-
-            </li>
-
-
-			<li class="recommended-list">
-
-		        <div class="recommended-cover-wp">
-
-			        <img class="recommended-img" src="picture/test.jpg" alt="recommended">
-					<div class="mask"></div>
-					<h3 class="recommended-text"> test </h3>
-			        <a href="#" ></a>
-
-
-                </div>
-
-            </li>
-
-
-			<li class="recommended-list">
-
-		        <div class="recommended-cover-wp">
-
-			        <img class="recommended-img" src="picture/test.jpg" alt="recommended">
-					<div class="mask"></div>
-					<h3 class="recommended-text"> test </h3>
-			        <a href="#" ></a>
-
-
-                </div>
-
-            </li>
-
-
-			<li class="recommended-list">
-
-		        <div class="recommended-cover-wp">
-
-			        <img class="recommended-img" src="picture/test.jpg" alt="recommended">
-					<div class="mask"></div>
-					<h3 class="recommended-text"> test </h3>
-			       <a href="#" ></a>
-
-
-                </div>
-
-            </li>
 
 
 
