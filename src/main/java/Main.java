@@ -85,7 +85,7 @@ public class Main {
 
       Statement stmt = connection.createStatement();
 
-      stmt.executeUpdate("CREATE TABLE IF NOT EXISTS users (use String)");
+      stmt.executeUpdate("CREATE TABLE IF NOT EXISTS users (use )");
       stmt.executeUpdate("INSERT INTO users VALUES ('user1')");
       ResultSet rs = stmt.executeQuery("SELECT * FROM users");
 
@@ -93,7 +93,7 @@ public class Main {
      ArrayList<String> output = new ArrayList<String>();
     while(rs.next())
     {
-       output.add("read from users, " + "email: "  );
+       output.add("read from users, " + "email: " + rs.getString("user") );
      }
 
     attributes.put("results",output);
