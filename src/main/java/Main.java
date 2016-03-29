@@ -180,7 +180,7 @@ public class Main {
                    ArrayList<String> output = new ArrayList<String>();
                   while(rs.next())
                   {
-                     output.add("read from users, " + "email: " + rs.getString("email_address") );
+                     output.add("read from users, " + "email: " + "email_address" );
                   }
 
                   attributes.put("results",output);
