@@ -160,11 +160,11 @@ public class Main {
                     Map<String, Object> attributes = new HashMap<>();
                     try{
                     connection = DatabaseUrl.extract().getConnection();
-                //    JSONObject obj = new JSONObject(req.body());
-                //  String email = obj.getString("signin-email");
-                //    String password = obj.getString("signin-password");
-                //    System.out.println(email);
-                //          System.out.println(password);
+                    JSONObject obj = new JSONObject(req.body());
+                  //  String email = obj.getString("signin-email");
+                  //  String password = obj.getString("signin-password");
+                  //  System.out.println(email);
+                  //  System.out.println(password);
 
 
                     Statement stmt = connection.createStatement();
@@ -184,13 +184,56 @@ public class Main {
                      output.add("read from users: " + rs.getString("email_address"));
                    }
                   attributes.put("results",output);
-                   return new ModelAndView(attributes, "users.ftl");
+                   return new ModelAndView(attributes, "db.ftl");
                    } catch (Exception e) {
                    attributes.put("message", "There was an error: " + e);
                    return new ModelAndView(attributes, "error.ftl");
                    } finally {
                    if (connection != null) try{connection.close();} catch(SQLException e){}
                   }}, new FreeMarkerEngine());
+
+
+
+
+/*
+                  get("/testuser", (req, res) -> {
+                    Connection connection = null;
+                    Map<String, Object> attributes = new HashMap<>();
+                    try {
+                      connection = DatabaseUrl.extract().getConnection();
+
+                      Statement stmt = connection.createStatement();
+                      stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
+                      stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
+                      ResultSet rs = stmt.executeQuery("SELECT tick FROM ticks");
+
+                      ArrayList<String> output = new ArrayList<String>();
+                      while (rs.next()) {
+                        output.add( "Read from DB: " + rs.getTimestamp("tick"));
+                      }
+
+                      attributes.put("results", output);
+                      return new ModelAndView(attributes, "db.ftl");
+                    } catch (Exception e) {
+                      attributes.put("message", "There was an error: " + e);
+                      return new ModelAndView(attributes, "error.ftl");
+                    } finally {
+                      if (connection != null) try{connection.close();} catch(SQLException e){}
+                    }
+                  }, new FreeMarkerEngine());
+
+
+
+*/
+
+
+
+
+
+
+
+
+
 
 
 
