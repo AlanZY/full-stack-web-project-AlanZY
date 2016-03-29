@@ -19,15 +19,16 @@ $(document).ready(function(){
       url:"/users",
       type:"POST",
       dataType: "json",
-      data: {email: $("#signin-email").val() },
+      data: send,
       success: function(result)
       {
-    //    var signin-email = document.getElementById("signin-email").value;
-  //      var signin-password = document.getElementById("signin-password").value;
-  //      alert(signin-email,signin-password);
-  //      var obj = $("signin-input").serializeJSON();
-  //      var send = JSON.stringify(obj);
-  //      console.log(send);
+       var signin-email = document.getElementById("signin-email").value;
+        var signin-password = document.getElementById("signin-password").value;
+        alert(signin-email,signin-password);
+        var obj = $("#signin-input").serializeJSON();
+       var send = JSON.stringify(obj);
+        console.log(send);
+
       }
     })
   }
@@ -39,14 +40,8 @@ $(document).ready(function(){
 
 
 
-
-
-
-
-
-
-
 </script>
+
 
 
 
