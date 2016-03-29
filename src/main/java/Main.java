@@ -163,8 +163,7 @@ public class Main {
                     JSONObject obj = new JSONObject(req.body());
                     String email = obj.getString("signin-email");
                     String password = obj.getString("signin-password");
-
-
+                
 
                     //Statement stmt = connection.createStatement();
                   //  stmt.executeUpdate("create table if not exists users (email_address json, password json)");
@@ -183,7 +182,7 @@ public class Main {
                 //     output.add("read from users: " + rs.getString("email_address"));
                 //   }
 
-                  output.add("read from users: " + email);
+                  output.add("read from users: " + "email_address");
                   output.add("read fasdf" + "sfsaf");
                   attributes.put("results",output);
                    return new ModelAndView(attributes, "db.ftl");
