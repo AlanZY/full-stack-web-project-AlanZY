@@ -154,41 +154,37 @@ public class Main {
                     });
 
 
-                  get("/users", (req, res) ->
+                  post("/api/userinfo", (req, res) ->
                   {
                     Connection connection = null;
                     Map<String, Object> attributes = new HashMap<>();
-              //      try{
+                    try{
                     connection = DatabaseUrl.extract().getConnection();
-                    System.out.println("sdgwerfeeeeeeeeeeeeeeeee");
-                  return null;});
-                //    System.out.println(req.body());
-                //   JSONObject obj = new JSONObject(req.body());
-                //    String email = obj.getString("signin-email");
-                //    String password = obj.getString("signin-password");
 
-/*
-                    //Statement stmt = connection.createStatement();
-                  //  stmt.executeUpdate("create table if not exists users (email_address json, password json)");
-                  //  stmt.executeUpdate("insert into users" +
-                  //           "(email_address, password)" +
-                  //           "values('" + email + "','" + password + "')");
+                   JSONObject obj = new JSONObject(req.body());
+                    String email = obj.getString("signin-email");
+                    String password = obj.getString("signin-password");
 
-                //    stmt.executeUpdate("insert into users" +
-                //             "(email_address, password)" +
-                //             "values('wefwef@sdfs','12345')");
-                  //  ResultSet rs = stmt.executeQuery("select email_address from users");
+
+                    Statement stmt = connection.createStatement();
+                    stmt.executeUpdate("create table if not exists users (email_address string, password string)");
+                    stmt.executeUpdate("insert into users" +
+                             "(email_address, password)" +
+                             "values('" + email + "','" + password + "')");
+
+              //    stmt.executeUpdate("insert into users" +
+             //             "(email_address, password)" +
+             //            "values('wefwef@sdfs','12345')");
+                    ResultSet rs = stmt.executeQuery("select email_address from users");
 
                    ArrayList<String> output = new ArrayList<String>();
-                //   while(rs.next())
-                //   {
-                //     output.add("read from users: " + rs.getString("email_address"));
-                //   }
+                  while(rs.next())
+                  {
+                     output.add("read from users, " + "email: " + rs.getString("email_address") );
+                  }
 
-                  output.add("read from users: " + "email_address");
-                  output.add("read fasdf" + "sfsaf");
                   attributes.put("results",output);
-                   return new ModelAndView(attributes, "db.ftl");
+                   return new ModelAndView(attributes, "users.ftl");
                    } catch (Exception e) {
                    attributes.put("message", "There was an error: " + e);
                    return new ModelAndView(attributes, "error.ftl");
@@ -197,38 +193,10 @@ public class Main {
                   }}, new FreeMarkerEngine());
 
 
-*/
-
-/*
-                  get("/testuser", (req, res) -> {
-                    Connection connection = null;
-                    Map<String, Object> attributes = new HashMap<>();
-                    try {
-                      connection = DatabaseUrl.extract().getConnection();
-
-                      Statement stmt = connection.createStatement();
-                      stmt.executeUpdate("CREATE TABLE IF NOT EXISTS ticks (tick timestamp)");
-                      stmt.executeUpdate("INSERT INTO ticks VALUES (now())");
-                      ResultSet rs = stmt.executeQuery("SELECT tick FROM ticks");
-
-                      ArrayList<String> output = new ArrayList<String>();
-                      while (rs.next()) {
-                        output.add( "Read from DB: " + rs.getTimestamp("tick"));
-                      }
-
-                      attributes.put("results", output);
-                      return new ModelAndView(attributes, "db.ftl");
-                    } catch (Exception e) {
-                      attributes.put("message", "There was an error: " + e);
-                      return new ModelAndView(attributes, "error.ftl");
-                    } finally {
-                      if (connection != null) try{connection.close();} catch(SQLException e){}
-                    }
-                  }, new FreeMarkerEngine());
 
 
 
-*/
+
 
 
 
