@@ -44,8 +44,7 @@ public class Main {
 
             return new ModelAndView(attributes, "user.ftl");
         }, new FreeMarkerEngine());
-	*/
-/*
+
     get("/db", (req, res) -> {
       Connection connection = null;
       Map<String, Object> attributes = new HashMap<>();
