@@ -71,6 +71,39 @@ public class Main {
       }
     }, new FreeMarkerEngine());
 
+    get("/testdb", (req, res) ->
+    {
+      Connection connection = null;
+      Map<String, Object> attributes = new HashMap<>();
+      try{
+      connection = DatabaseUrl.extract().getConnection();
+
+  //   JSONObject obj = new JSONObject(req.body());
+  //    String email = obj.getString("loginin-email");
+  //    String password = obj.getString("loginin-password");
+
+
+      Statement stmt = connection.createStatement();
+
+      stmt.executeUpdate("CREATE TABLE IF NOT EXISTS users (use String)");
+      stmt.executeUpdate("INSERT INTO users VALUES ('user1')");
+      ResultSet rs = stmt.executeQuery("SELECT * FROM users");
+
+
+     ArrayList<String> output = new ArrayList<String>();
+    while(rs.next())
+    {
+       output.add("read from users, " + "email: " + rs.getString("user") );
+     }
+
+    attributes.put("results",output);
+     return new ModelAndView(attributes, "testdb.ftl");
+     } catch (Exception e) {
+     attributes.put("message", "There was an error: " + e);
+     return new ModelAndView(attributes, "error.ftl");
+     } finally {
+     if (connection != null) try{connection.close();} catch(SQLException e){}
+    }}, new FreeMarkerEngine());
 
 
 
@@ -153,7 +186,7 @@ public class Main {
                       return xml;
                     });
 
-
+/*
                   post("/adduser", (req, res) ->
                   {
                       ArrayList<String> tests = new ArrayList<String>();
@@ -181,7 +214,7 @@ public class Main {
 
 
 
-/*
+                post("/add",(req,res)->
 
                   {
 
@@ -209,11 +242,11 @@ public class Main {
                   }}, new FreeMarkerEngine());
 
 
-*/
 
 
 
-/*
+
+
                   post("/finduser", (req, res) ->
                   {
                     Connection connection = null;
