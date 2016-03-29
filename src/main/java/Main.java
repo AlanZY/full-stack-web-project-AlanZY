@@ -85,9 +85,9 @@ public class Main {
 
       Statement stmt = connection.createStatement();
 
-      stmt.executeUpdate("CREATE TABLE IF NOT EXISTS users (user character(10)  )");
+      stmt.executeUpdate("CREATE TABLE IF NOT EXISTS users (user varchar(20)  )");
       stmt.executeUpdate("INSERT INTO users VALUES ('u')");
-      ResultSet rs = stmt.executeQuery("SELECT * FROM users");
+      ResultSet rs = stmt.executeQuery("SELECT user FROM users");
 
 
      ArrayList<String> output = new ArrayList<String>();
