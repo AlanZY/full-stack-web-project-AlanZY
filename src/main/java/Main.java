@@ -93,7 +93,7 @@ public class Main {
      ArrayList<String> output = new ArrayList<String>();
     while(rs.next())
     {
-       output.add("read from users, " + "email: " + rs.getString("user") );
+       output.add("read from users, " + "email: " + rs.getString(1) );
      }
 
     attributes.put("results",output);
