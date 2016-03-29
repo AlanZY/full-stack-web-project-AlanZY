@@ -160,10 +160,12 @@ public class Main {
                     Map<String, Object> attributes = new HashMap<>();
                     try{
                     connection = DatabaseUrl.extract().getConnection();
-                    JSONObject obj = new JSONObject(req.body());
-                    String email = obj.getString("signin-email");
-                    String password = obj.getString("signin-password");
-                
+
+                    System.out.println(req.body());
+                //   JSONObject obj = new JSONObject(req.body());
+                //    String email = obj.getString("signin-email");
+                //    String password = obj.getString("signin-password");
+
 
                     //Statement stmt = connection.createStatement();
                   //  stmt.executeUpdate("create table if not exists users (email_address json, password json)");
