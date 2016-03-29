@@ -167,14 +167,14 @@ public class Main {
 
 
                     Statement stmt = connection.createStatement();
-                    stmt.executeUpdate("create table if not exists users (email_address String, password String)");
+                    stmt.executeUpdate("create table if not exists users (email_address int, password int)");
                 //    stmt.executeUpdate("insert into users" +
                 //             "(email_address, password)" +
                 //             "values('" + email + "','" + password + "')");
 
                   stmt.executeUpdate("insert into users" +
                         "(email_address, password)" +
-                         "values('wefwef@sdfs','12345')");
+                         "values('123','12345')");
                     ResultSet rs = stmt.executeQuery("select email_address from users");
 
                    ArrayList<String> output = new ArrayList<String>();
