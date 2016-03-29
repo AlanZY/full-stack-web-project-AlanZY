@@ -87,12 +87,11 @@ public class Main {
   //    stmt.executeUpdate("INSERT INTO users_test VALUES ('user1')");
       ResultSet rs = stmt.executeQuery("SELECT * FROM users_test");
      ArrayList<String> output = new ArrayList<String>();
-     int i=1;
-    while(rs.next())
-    {
 
-       output.add("read from users, " + "email: " + rs.getString(i++) );
-     }
+
+       output.add("read from users, " + "email: " + rs.getString(1) );
+       output.add("read from users, " + "email: " + rs.getString(2) );
+
     attributes.put("results",output);
      return new ModelAndView(attributes, "testdb.ftl");
      } catch (Exception e) {
