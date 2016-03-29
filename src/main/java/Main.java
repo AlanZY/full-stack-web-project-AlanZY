@@ -167,22 +167,25 @@ public class Main {
                   //  System.out.println(password);
 
 
-                    Statement stmt = connection.createStatement();
-                    stmt.executeUpdate("create table if not exists users (email_address json, password json)");
+                    //Statement stmt = connection.createStatement();
+                  //  stmt.executeUpdate("create table if not exists users (email_address json, password json)");
                   //  stmt.executeUpdate("insert into users" +
                   //           "(email_address, password)" +
                   //           "values('" + email + "','" + password + "')");
 
-                    stmt.executeUpdate("insert into users" +
-                             "(email_address, password)" +
-                             "values('wefwef@','12345')");
-                    ResultSet rs = stmt.executeQuery("select email_address from users");
+                //    stmt.executeUpdate("insert into users" +
+                //             "(email_address, password)" +
+                //             "values('wefwef@sdfs','12345')");
+                  //  ResultSet rs = stmt.executeQuery("select email_address from users");
 
                    ArrayList<String> output = new ArrayList<String>();
-                   while(rs.next())
-                   {
-                     output.add("read from users: " + rs.getString("email_address"));
-                   }
+                //   while(rs.next())
+                //   {
+                //     output.add("read from users: " + rs.getString("email_address"));
+                //   }
+
+                  output.add("read from users: " + "email_address");
+                  output.add("read fasdf" + "sfsaf");
                   attributes.put("results",output);
                    return new ModelAndView(attributes, "db.ftl");
                    } catch (Exception e) {
