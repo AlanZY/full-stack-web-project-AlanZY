@@ -81,21 +81,16 @@ public class Main {
   //   JSONObject obj = new JSONObject(req.body());
   //    String email = obj.getString("loginin-email");
   //    String password = obj.getString("loginin-password");
-
-
       Statement stmt = connection.createStatement();
 
-      stmt.executeUpdate("CREATE TABLE IF NOT EXISTS users_test (test varchar(20)  )");
-      stmt.executeUpdate("INSERT INTO users_test VALUES ('user1')");
-      ResultSet rs = stmt.executeQuery("SELECT test FROM users_test");
-
-
+  //    stmt.executeUpdate("CREATE TABLE IF NOT EXISTS users_test (test varchar(20)  )");
+  //    stmt.executeUpdate("INSERT INTO users_test VALUES ('user1')");
+      ResultSet rs = stmt.executeQuery("SELECT * FROM users_test");
      ArrayList<String> output = new ArrayList<String>();
     while(rs.next())
     {
        output.add("read from users, " + "email: " + rs.getString(2) );
      }
-
     attributes.put("results",output);
      return new ModelAndView(attributes, "testdb.ftl");
      } catch (Exception e) {
@@ -104,6 +99,47 @@ public class Main {
      } finally {
      if (connection != null) try{connection.close();} catch(SQLException e){}
     }}, new FreeMarkerEngine());
+
+
+/*
+    post("/add",(req,res)->
+
+      {
+
+        Connection connection = null;
+        Map<String, Object> attributes = new HashMap<>();
+        try{
+        connection = DatabaseUrl.extract().getConnection();
+
+       JSONObject obj = new JSONObject(req.body());
+        String email = obj.getString("signin-email");
+        String password = obj.getString("signin-password");
+
+
+       Statement stmt = connection.createStatement();
+       stmt.executeUpdate("insert into users" +
+                "(email_address, password)" +
+                "values('" + email + "','" + password + "')");
+
+       return req.body();
+       } catch (Exception e) {
+       attributes.put("message", "There was an error: " + e);
+       return new ModelAndView(attributes, "error.ftl");
+       } finally {
+       if (connection != null) try{connection.close();} catch(SQLException e){}
+      }}, new FreeMarkerEngine());
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
