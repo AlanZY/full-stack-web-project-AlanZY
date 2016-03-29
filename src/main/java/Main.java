@@ -86,14 +86,14 @@ public class Main {
       Statement stmt = connection.createStatement();
 
       stmt.executeUpdate("CREATE TABLE IF NOT EXISTS users_test (test varchar(20)  )");
-      stmt.executeUpdate("INSERT INTO users_test VALUES ('u')");
+      stmt.executeUpdate("INSERT INTO users_test VALUES ('user1')");
       ResultSet rs = stmt.executeQuery("SELECT test FROM users_test");
 
 
      ArrayList<String> output = new ArrayList<String>();
     while(rs.next())
     {
-       output.add("read from users, " + "email: " + rs.getString(1) );
+       output.add("read from users, " + "email: " + rs.getString(2) );
      }
 
     attributes.put("results",output);
