@@ -18,6 +18,7 @@ $(function(){
     $.ajax({
       url:"/users",
       type:"POST",
+      dataType: "json",
       data: send,
       success: function(result)
       {

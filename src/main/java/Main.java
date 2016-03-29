@@ -167,14 +167,14 @@ public class Main {
 
 
                     Statement stmt = connection.createStatement();
-                    stmt.executeUpdate("create table if not exists users (email_address string, password string)");
-                    stmt.executeUpdate("insert into users" +
-                             "(email_address, password)" +
-                             "values('" + email + "','" + password + "')");
+                    stmt.executeUpdate("create table if not exists users (email_address String, password String)");
+                //    stmt.executeUpdate("insert into users" +
+                //             "(email_address, password)" +
+                //             "values('" + email + "','" + password + "')");
 
-              //    stmt.executeUpdate("insert into users" +
-             //             "(email_address, password)" +
-             //            "values('wefwef@sdfs','12345')");
+                  stmt.executeUpdate("insert into users" +
+                        "(email_address, password)" +
+                         "values('wefwef@sdfs','12345')");
                     ResultSet rs = stmt.executeQuery("select email_address from users");
 
                    ArrayList<String> output = new ArrayList<String>();
@@ -197,8 +197,8 @@ public class Main {
 
 
 
-
-                  post("findusers", (req, res) ->
+/*
+                  post("/finduser", (req, res) ->
                   {
                     Connection connection = null;
                     Map<String, Object> attributes = new HashMap<>();
@@ -206,29 +206,21 @@ public class Main {
                     connection = DatabaseUrl.extract().getConnection();
 
                    JSONObject obj = new JSONObject(req.body());
-                    String email = obj.getString("signin-email");
-                    String password = obj.getString("signin-password");
+                    String email = obj.getString("loginin-email");
+                    String password = obj.getString("loginin-password");
 
 
                     Statement stmt = connection.createStatement();
-                    stmt.executeUpdate("create table if not exists users (email_address string, password string)");
-                    stmt.executeUpdate("insert into users" +
-                             "(email_address, password)" +
-                             "values('" + email + "','" + password + "')");
-
-                //    stmt.executeUpdate("insert into users" +
-                //             "(email_address, password)" +
-                //            "values('wefwef@sdfs','12345')");
-                    ResultSet rs = stmt.executeQuery("select email_address from users");
+                    ResultSet rs = stmt.executeQuery("select * from users where email_address=13123@gmail.com ");
 
                    ArrayList<String> output = new ArrayList<String>();
                   while(rs.next())
                   {
                      output.add("read from users, " + "email: " + rs.getString("email_address") );
-                  }
+                   }
 
                   attributes.put("results",output);
-                   return new ModelAndView(attributes, "users.ftl");
+                   return new ModelAndView(attributes, "finduser.ftl");
                    } catch (Exception e) {
                    attributes.put("message", "There was an error: " + e);
                    return new ModelAndView(attributes, "error.ftl");
@@ -236,7 +228,7 @@ public class Main {
                    if (connection != null) try{connection.close();} catch(SQLException e){}
                   }}, new FreeMarkerEngine());
 
-
+*/
 
 
 
