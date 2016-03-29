@@ -4,6 +4,7 @@ import java.sql.*;
 import java.util.HashMap;
 import java.util.ArrayList;
 import java.util.Map;
+import org.json.JSONObject;
 
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -34,14 +35,7 @@ public class Main {
     port(Integer.valueOf(System.getenv("PORT")));
     staticFileLocation("/public");
 
-    get("/hello", (req, res) -> {
-      RelativisticModel.select();
-
-      String energy = System.getenv().get("ENERGY");
-
-      Amount<Mass> m = Amount.valueOf(energy).to(KILOGRAM);
-      return "E=mc^2: " + energy + " = " + m.toString();
-    });
+   get("/hello", (req, res) -> "Hello World");
 
 	/*
     get("/user", (request, response) -> {
@@ -69,7 +63,7 @@ public class Main {
         }
 
         attributes.put("results", output);
-        return new ModelAndView(attributes, "db.ftl");
+        return new ModelAndView(attributes, "db2.ftl");
       } catch (Exception e) {
         attributes.put("message", "There was an error: " + e);
         return new ModelAndView(attributes, "error.ftl");
@@ -147,7 +141,7 @@ public class Main {
                 }, new FreeMarkerEngine());
 
 
-                    get("api/info", (req, res ) ->
+                    get("/api/info", (req, res ) ->
                     {
                       Map<String, Object> data = new HashMap<>();
                       data.put("username","Smith");
@@ -161,11 +155,45 @@ public class Main {
                     });
 
 
+                  post("/api/userinfo",(req, res) ->
+                  {
+                    Connection connection = null;
+                    Map<String, Object> attributes = new HashMap<>();
+                    try{
+                    connection = DatabaseUrl.extract().getConnection();
+                    //JSONObject obj = new JSONObject(req.body());
+                  //String email = obj.getString("signin-email");
+                    //String password = obj.getString("signin-password");
 
 
 
 
-  }
+                    Statement stmt = connection.createStatement();
+                    stmt.executeUpdate("create table if not exists users (email_address, password)");
+                  //  stmt.executeUpdate("insert into users" +
+                  //           "(email_address, password)" +
+                  //           "values('" + email + "','" + password + "')");
+
+                    stmt.executeUpdate("insert into users" +
+                             "(email_address, password)" +
+                             "values('wefwef@sdf.com','12345')");
+                    ResultSet rs = stmt.executeQuery("select email_address, password from users");
+
+                   ArrayList<String> output = new ArrayList<String>();
+                   while(rs.next())
+                   {
+                     output.add("read from users: " + rs.getString("email_address"));
+                   }
+                  attributes.put("results",output);
+                   return new ModelAndView(attributes, "users.ftl");
+                   } catch (Exception e) {
+                   attributes.put("message", "There was an error: " + e);
+                   return new ModelAndView(attributes, "error.ftl");
+                   } finally {
+                   if (connection != null) try{connection.close();} catch(SQLException e){}
+                  }}, new FreeMarkerEngine());
 
 
+
+}
 }
