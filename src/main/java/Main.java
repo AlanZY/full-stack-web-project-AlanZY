@@ -119,17 +119,16 @@ public class Main {
 
 
        Statement stmt = connection.createStatement();
-       stmt.executeUpdate("insert into users_test" +
-                "(test)" +
-                "values('" + email + "')");
-
-       return null;
+       stmt.executeUpdate("INSERT INTO users_test" +
+                "VALUES('" + email + "')");
+                res.status(200);
+                       return req.body();
        } catch (Exception e) {
-       attributes.put("message", "There was an error: " + e);
-       return new ModelAndView(attributes, "error.ftl");
+         res.status(500);
+          return e.getMessage();
        } finally {
-       if (connection != null) try{connection.close();} catch(SQLException e){}
-      }}, new FreeMarkerEngine());
+
+      }});
 
 
 
