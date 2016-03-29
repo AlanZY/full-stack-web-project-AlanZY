@@ -161,27 +161,27 @@ public class Main {
                     try{
                     connection = DatabaseUrl.extract().getConnection();
 
-                  // JSONObject obj = new JSONObject(req.body());
-                  //  String email = obj.getString("signin-email");
+                   JSONObject obj = new JSONObject(req.body());
+                    String email = obj.getString("signin-email");
                   //  String password = obj.getString("signin-password");
 
 
-                    Statement stmt = connection.createStatement();
-                    stmt.executeUpdate("create table if not exists users (email_address int)");
+                //    Statement stmt = connection.createStatement();
+                //    stmt.executeUpdate("create table if not exists users (email_address int)");
                   //  stmt.executeUpdate("insert into users" +
                   //           "(email_address, password)" +
                   //          "values('" + email + "','" + password + "')");
 
-                  stmt.executeUpdate("insert into users" +
-                        "(email_address)" +
-                         "values(23)");
-                    ResultSet rs = stmt.executeQuery("select email_address from users");
+                //  stmt.executeUpdate("insert into users" +
+                //        "(email_address)" +
+                //         "values(23)");
+                //    ResultSet rs = stmt.executeQuery("select email_address from users");
 
                    ArrayList<String> output = new ArrayList<String>();
-                  while(rs.next())
-                  {
-                     output.add("read from users, " + "email: " + "email_address" );
-                  }
+                //  while(rs.next())
+                //  {
+                     output.add("read from users, " + "'+email+'" );
+                //  }
 
                   attributes.put("results",output);
                    return new ModelAndView(attributes, "users.ftl");
