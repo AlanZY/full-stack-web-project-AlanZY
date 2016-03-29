@@ -154,7 +154,7 @@ public class Main {
                     });
 
 
-                  post("/users", (req, res) ->
+                  get("/users", (req, res) ->
                   {
                     Connection connection = null;
                     Map<String, Object> attributes = new HashMap<>();
