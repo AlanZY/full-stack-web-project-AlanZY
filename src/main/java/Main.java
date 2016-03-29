@@ -167,7 +167,7 @@ public class Main {
 
 
                     Statement stmt = connection.createStatement();
-                    stmt.executeUpdate("create table if not exists users (email_address text, password text)");
+                    stmt.executeUpdate("create table if not exists users (email_address text, password SETtext)");
                   //  stmt.executeUpdate("insert into users" +
                   //           "(email_address, password)" +
                   //          "values('" + email + "','" + password + "')");
