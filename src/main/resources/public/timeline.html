@@ -23,6 +23,7 @@ $(function()
       url:"/api/timeline_info",
       success: function(result)
       {
+
         var result=JSON.parse(result);
         $("#h1").html(result.title1);
         $("#p1").html(result.content1);

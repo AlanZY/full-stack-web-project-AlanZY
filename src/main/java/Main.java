@@ -154,7 +154,35 @@ public class Main {
                     });
 
 
-                  post("/users", (req, res) ->
+                  post("/adduser", (req, res) ->
+                  {
+                      ArrayList<String> tests = new ArrayList<String>();
+                      try{
+
+
+
+                      JSONObject obj = new JSONObject(req.body());
+                       String email = obj.getString("signin-email");
+
+                      tests.add(email);
+
+                      Map<String, Object> attributes = new HashMap<>();
+                      attributes.put("tests", tests);
+
+
+                      return req.body();
+                    }catch (Exception e) {
+        res.status(500);
+        return e.getMessage();
+      } finally {
+
+      }
+    });
+
+
+
+/*
+
                   {
 
                     Connection connection = null;
@@ -163,29 +191,16 @@ public class Main {
                     connection = DatabaseUrl.extract().getConnection();
 
                    JSONObject obj = new JSONObject(req.body());
-                    String email = obj.getString("email");
+                    String email = obj.getString("signin-email");
                     String password = obj.getString("signin-password");
 
 
                    Statement stmt = connection.createStatement();
-                    stmt.executeUpdate("create table if not exists users (email_address text, password text)");
                    stmt.executeUpdate("insert into users" +
                             "(email_address, password)" +
                             "values('" + email + "','" + password + "')");
 
-                //  stmt.executeUpdate("insert into users" +
-                //        "(email_address)" +
-                //         "values(23)");
-                    ResultSet rs = stmt.executeQuery("select email_address from users");
-
-                   ArrayList<String> output = new ArrayList<String>();
-                  while(rs.next())
-                  {
-                     output.add("read from users, " + rs.getString("email_address") );
-                  }
-
-                  attributes.put("results",output);
-                   return new ModelAndView(attributes, "users.ftl");
+                   return req.body();
                    } catch (Exception e) {
                    attributes.put("message", "There was an error: " + e);
                    return new ModelAndView(attributes, "error.ftl");
@@ -194,7 +209,7 @@ public class Main {
                   }}, new FreeMarkerEngine());
 
 
-
+*/
 
 
 
