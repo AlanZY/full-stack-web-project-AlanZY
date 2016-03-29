@@ -84,13 +84,13 @@ public class Main {
       Statement stmt = connection.createStatement();
 
   //    stmt.executeUpdate("CREATE TABLE IF NOT EXISTS users_test (test varchar(20)  )");
-      stmt.executeUpdate("INSERT INTO users_test VALUES ('user1')");
+  //    stmt.executeUpdate("INSERT INTO users_test VALUES ('user1')");
       ResultSet rs = stmt.executeQuery("SELECT * FROM users_test");
      ArrayList<String> output = new ArrayList<String>();
-
+    while(rs.next())
+    {
        output.add("read from users, " + "email: " + rs.getString(1) );
-        output.add("read from users, " + "email: " + rs.getString(2) );
-
+     }
     attributes.put("results",output);
      return new ModelAndView(attributes, "testdb.ftl");
      } catch (Exception e) {
@@ -101,8 +101,8 @@ public class Main {
     }}, new FreeMarkerEngine());
 
 
-/*
-    post("/add",(req,res)->
+
+    post("/testdb",(req,res)->
 
       {
 
@@ -113,15 +113,15 @@ public class Main {
 
        JSONObject obj = new JSONObject(req.body());
         String email = obj.getString("signin-email");
-        String password = obj.getString("signin-password");
+        //String password = obj.getString("signin-password");
 
 
        Statement stmt = connection.createStatement();
-       stmt.executeUpdate("insert into users" +
-                "(email_address, password)" +
-                "values('" + email + "','" + password + "')");
+       stmt.executeUpdate("insert into users_test" +
+                "(test)" +
+                "values('" + email + "')");
 
-       return req.body();
+       return null;
        } catch (Exception e) {
        attributes.put("message", "There was an error: " + e);
        return new ModelAndView(attributes, "error.ftl");
