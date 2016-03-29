@@ -177,7 +177,7 @@ public class Main {
 
                     stmt.executeUpdate("insert into users" +
 
-                             "values('wefwef@sdf.com')");
+                             "values('wefwef@sdf')");
                     ResultSet rs = stmt.executeQuery("select email_address from users");
 
                    ArrayList<String> output = new ArrayList<String>();
