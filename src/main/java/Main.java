@@ -154,7 +154,7 @@ public class Main {
                     });
 
 
-                  get("users",(req, res) ->
+                  get("/users",(req, res) ->
                   {
                     Connection connection = null;
                     Map<String, Object> attributes = new HashMap<>();
@@ -165,8 +165,6 @@ public class Main {
                 //    String password = obj.getString("signin-password");
                 //    System.out.println(email);
                 //          System.out.println(password);
-
-
 
 
                     Statement stmt = connection.createStatement();
