@@ -154,16 +154,16 @@ public class Main {
                     });
 
 
-                  post("users", (req, res) ->
+                  get("/users", (req, res) ->
                   {
                     Connection connection = null;
                     Map<String, Object> attributes = new HashMap<>();
                     try{
                     connection = DatabaseUrl.extract().getConnection();
 
-                   JSONObject obj = new JSONObject(req.body());
-                    String email = obj.getString("signin-email");
-                    String password = obj.getString("signin-password");
+                //   JSONObject obj = new JSONObject(req.body());
+                //    String email = obj.getString("signin-email");
+                //    String password = obj.getString("signin-password");
 
 
                     Statement stmt = connection.createStatement();
