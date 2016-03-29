@@ -154,27 +154,27 @@ public class Main {
                     });
 
 
-                  get("/users", (req, res) ->
+                  post("/users", (req, res) ->
                   {
                     Connection connection = null;
                     Map<String, Object> attributes = new HashMap<>();
                     try{
                     connection = DatabaseUrl.extract().getConnection();
 
-                //   JSONObject obj = new JSONObject(req.body());
-                //    String email = obj.getString("signin-email");
-                //    String password = obj.getString("signin-password");
+                  // JSONObject obj = new JSONObject(req.body());
+                  //  String email = obj.getString("signin-email");
+                  //  String password = obj.getString("signin-password");
 
 
                     Statement stmt = connection.createStatement();
-                    stmt.executeUpdate("create table if not exists users (email_address text, password text");
-                //    stmt.executeUpdate("insert into users" +
-                //             "(email_address, password)" +
-                //             "values('" + email + "','" + password + "')");
+                    stmt.executeUpdate("create table if not exists users (email_address text, password text)");
+                  //  stmt.executeUpdate("insert into users" +
+                  //           "(email_address, password)" +
+                  //          "values('" + email + "','" + password + "')");
 
                   stmt.executeUpdate("insert into users" +
                         "(email_address, password)" +
-                         "values('123','12345')");
+                         "values('emailhb','jfvdkjn')");
                     ResultSet rs = stmt.executeQuery("select email_address from users");
 
                    ArrayList<String> output = new ArrayList<String>();
@@ -228,8 +228,8 @@ public class Main {
                    if (connection != null) try{connection.close();} catch(SQLException e){}
                   }}, new FreeMarkerEngine());
 
-*/
 
+*/
 
 
 
