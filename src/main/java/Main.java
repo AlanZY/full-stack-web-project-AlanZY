@@ -166,7 +166,7 @@ public class Main {
                 //    String email = obj.getString("signin-email");
                 //    String password = obj.getString("signin-password");
 
-
+/*
                     //Statement stmt = connection.createStatement();
                   //  stmt.executeUpdate("create table if not exists users (email_address json, password json)");
                   //  stmt.executeUpdate("insert into users" +
@@ -196,7 +196,7 @@ public class Main {
                   }}, new FreeMarkerEngine());
 
 
-
+*/
 
 /*
                   get("/testuser", (req, res) -> {
