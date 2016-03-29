@@ -45,7 +45,7 @@ public class Main {
             return new ModelAndView(attributes, "user.ftl");
         }, new FreeMarkerEngine());
 	*/
-/*
+
     get("/db", (req, res) -> {
       Connection connection = null;
       Map<String, Object> attributes = new HashMap<>();
@@ -71,7 +71,7 @@ public class Main {
         if (connection != null) try{connection.close();} catch(SQLException e){}
       }
     }, new FreeMarkerEngine());
-*/
+
 
 
 
@@ -155,15 +155,17 @@ public class Main {
                     });
 
 
-                  post("/api/userinfo",(req, res) ->
+                  get("/api/userinfo",(req, res) ->
                   {
                     Connection connection = null;
                     Map<String, Object> attributes = new HashMap<>();
                     try{
                     connection = DatabaseUrl.extract().getConnection();
-                    //JSONObject obj = new JSONObject(req.body());
-                  //String email = obj.getString("signin-email");
-                    //String password = obj.getString("signin-password");
+                //    JSONObject obj = new JSONObject(req.body());
+                //  String email = obj.getString("signin-email");
+                //    String password = obj.getString("signin-password");
+                //    System.out.println(email);
+                //          System.out.println(password);
 
 
 
