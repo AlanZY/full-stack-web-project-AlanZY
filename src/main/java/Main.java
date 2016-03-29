@@ -160,8 +160,8 @@ public class Main {
                     Map<String, Object> attributes = new HashMap<>();
                     try{
                     connection = DatabaseUrl.extract().getConnection();
-
-                    System.out.println(req.body());
+                    System.out.println("sdgwerfeeeeeeeeeeeeeeeee");
+                //    System.out.println(req.body());
                 //   JSONObject obj = new JSONObject(req.body());
                 //    String email = obj.getString("signin-email");
                 //    String password = obj.getString("signin-password");
