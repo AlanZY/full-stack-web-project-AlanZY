@@ -154,7 +154,7 @@ public class Main {
                     });
 
 
-                  post("/api/userinfo", (req, res) ->
+                  post("users", (req, res) ->
                   {
                     Connection connection = null;
                     Map<String, Object> attributes = new HashMap<>();
@@ -175,6 +175,50 @@ public class Main {
               //    stmt.executeUpdate("insert into users" +
              //             "(email_address, password)" +
              //            "values('wefwef@sdfs','12345')");
+                    ResultSet rs = stmt.executeQuery("select email_address from users");
+
+                   ArrayList<String> output = new ArrayList<String>();
+                  while(rs.next())
+                  {
+                     output.add("read from users, " + "email: " + rs.getString("email_address") );
+                  }
+
+                  attributes.put("results",output);
+                   return new ModelAndView(attributes, "users.ftl");
+                   } catch (Exception e) {
+                   attributes.put("message", "There was an error: " + e);
+                   return new ModelAndView(attributes, "error.ftl");
+                   } finally {
+                   if (connection != null) try{connection.close();} catch(SQLException e){}
+                  }}, new FreeMarkerEngine());
+
+
+
+
+
+
+
+                  post("findusers", (req, res) ->
+                  {
+                    Connection connection = null;
+                    Map<String, Object> attributes = new HashMap<>();
+                    try{
+                    connection = DatabaseUrl.extract().getConnection();
+
+                   JSONObject obj = new JSONObject(req.body());
+                    String email = obj.getString("signin-email");
+                    String password = obj.getString("signin-password");
+
+
+                    Statement stmt = connection.createStatement();
+                    stmt.executeUpdate("create table if not exists users (email_address string, password string)");
+                    stmt.executeUpdate("insert into users" +
+                             "(email_address, password)" +
+                             "values('" + email + "','" + password + "')");
+
+                //    stmt.executeUpdate("insert into users" +
+                //             "(email_address, password)" +
+                //            "values('wefwef@sdfs','12345')");
                     ResultSet rs = stmt.executeQuery("select email_address from users");
 
                    ArrayList<String> output = new ArrayList<String>();

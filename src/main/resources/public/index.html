@@ -16,7 +16,7 @@ $(function(){
   $('#sign-up-input').click(function()
   {
     $.ajax({
-      url:"/api/userinfo",
+      url:"/users",
       type:"POST",
       data: send,
       success: function(result)
