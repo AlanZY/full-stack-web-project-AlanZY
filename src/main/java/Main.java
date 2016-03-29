@@ -85,13 +85,13 @@ public class Main {
 
   //    stmt.executeUpdate("CREATE TABLE IF NOT EXISTS users_test (test varchar(20)  )");
   //    stmt.executeUpdate("INSERT INTO users_test VALUES ('user1')");
-      ResultSet rs = stmt.executeQuery("SELECT * FROM users_test");
+      ResultSet rs = stmt.executeQuery("SELECT test FROM users_test");
      ArrayList<String> output = new ArrayList<String>();
-     int i=0;
+
     while(rs.next())
     {
 
-       output.add("read from users, " + "email: " + rs.getString(i) );
+       output.add("read from users, " + "email: " + rs.getString("test") );
      }
     attributes.put("results",output);
      return new ModelAndView(attributes, "testdb.ftl");
