@@ -83,16 +83,11 @@ public class Main {
       try{
       connection = DatabaseUrl.extract().getConnection();
 
-  //   JSONObject obj = new JSONObject(req.body());
-  //    String email = obj.getString("loginin-email");
-  //    String password = obj.getString("loginin-password");
       Statement stmt = connection.createStatement();
 
       stmt.executeUpdate("CREATE TABLE IF NOT EXISTS user_info (user_email varchar(100),  user_password  varchar(30),  user_name  varchar(30) )");
     //  stmt.executeUpdate("INSERT INTO users_info VALUES ('user_email','user_password','user_name')");
 
-    stmt.executeUpdate("INSERT INTO user_info(user_email, user_password, user_name)" +
-             "VALUES('john2@gmail.com', 'john34', 'john')");
 
       ResultSet rs = stmt.executeQuery("SELECT user_email, user_password FROM user_info");
       ArrayList<String> output = new ArrayList<String>();
@@ -122,7 +117,7 @@ public class Main {
         Map<String, Object> attributes = new HashMap<>();
         try{
         connection = DatabaseUrl.extract().getConnection();
-        System.out.println(req.body());
+
         JSONObject obj = new JSONObject(req.body());
 
 
@@ -139,10 +134,10 @@ public class Main {
         res.status(200);
        return req.body();
        } catch (Exception e) {
-         res.status(500);
+         System.err.println("Exception: "+ e);
           return e.getMessage();
        } finally {
-
+        if (connection != null) try{connection.close();} catch(SQLException e){}
       }});
 
 
