@@ -27,7 +27,6 @@ import org.jscience.physics.amount.Amount;
 import com.heroku.sdk.jdbc.DatabaseUrl;
 
 
-
 public class Main {
 
   public static void main(String[] args) {
@@ -37,7 +36,7 @@ public class Main {
     port(Integer.valueOf(System.getenv("PORT")));
     staticFileLocation("/public");
 
-   get("/hello", (req, res) -> "Hello World");
+    get("/hello", (req, res) -> "Hello World");
 
 	/*
     get("/user", (request, response) -> {
