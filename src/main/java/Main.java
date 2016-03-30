@@ -119,7 +119,7 @@ public class Main {
         connection = DatabaseUrl.extract().getConnection();
 
        JSONObject obj = new JSONObject(req.body());
- 
+
 
         String email = obj.getString("command");
     //    String password = obj.getString("signin-password");
