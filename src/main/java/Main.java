@@ -129,8 +129,8 @@ public class Main {
 
        Statement stmt = connection.createStatement();
        stmt.executeUpdate("INSERT INTO users_test(test)" +
-              //  "VALUES('" + email + "')");
-              "VALUES('testpost')");
+                "VALUES('" + email + "')");
+            //  "VALUES('testpost')");
 
                 res.status(200);
        return req.body();
