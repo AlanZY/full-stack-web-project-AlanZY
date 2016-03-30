@@ -76,7 +76,7 @@ public class Main {
       }
     }, new FreeMarkerEngine());
 
-    get("/testdb", (req, res) ->
+    get("/user_info", (req, res) ->
     {
       Connection connection = null;
       Map<String, Object> attributes = new HashMap<>();
@@ -88,18 +88,19 @@ public class Main {
   //    String password = obj.getString("loginin-password");
       Statement stmt = connection.createStatement();
 
-    //  stmt.executeUpdate("CREATE TABLE IF NOT EXISTS users_test (test varchar(20)  )");
-      stmt.executeUpdate("INSERT INTO users_test VALUES ('testpo')");
-      ResultSet rs = stmt.executeQuery("SELECT test FROM users_test");
-     ArrayList<String> output = new ArrayList<String>();
+      stmt.executeUpdate("CREATE TABLE IF NOT EXISTS user_info (user_email varchar(100),  user_password  varchar(30),  user_name  varchar(30) )");
+    //  stmt.executeUpdate("INSERT INTO users_info VALUES ('user_email','user_password','user_name')");
+      ResultSet rs = stmt.executeQuery("SELECT user_email, user_password FROM users_info");
+      ArrayList<String> output = new ArrayList<String>();
 
     while(rs.next())
     {
 
-       output.add("read from users, " + "email: " + rs.getString("test") );
+       output.add("read user " + "email: " + rs.getString("user_email") + "     password: " + rs.getString("user_password") );
+
      }
     attributes.put("results",output);
-     return new ModelAndView(attributes, "testdb.ftl");
+     return new ModelAndView(attributes, "user_info.ftl");
      } catch (Exception e) {
      attributes.put("message", "There was an error: " + e);
      return new ModelAndView(attributes, "error.ftl");
@@ -109,7 +110,7 @@ public class Main {
 
 
 
-    post("/testuser",(req,res)->
+    post("/adduser",(req,res)->
 
       {
 
@@ -118,40 +119,27 @@ public class Main {
         try{
         connection = DatabaseUrl.extract().getConnection();
         System.out.println(req.body());
-       JSONObject obj = new JSONObject(req.body());
+        JSONObject obj = new JSONObject(req.body());
 
 
-        String email = obj.getString("signin-email");
-        String password = obj.getString("signin-password");
+        String email = obj.getString("signup-email");
+        String password = obj.getString("signup-password");
 
       //  String email = password;
 
 
        Statement stmt = connection.createStatement();
-       stmt.executeUpdate("INSERT INTO users_test(test)" +
-                "VALUES('" + email + "')");
-            //  "VALUES('testpost')");
+       stmt.executeUpdate("INSERT INTO user_info(user_email, user_password, user_name)" +
+                "VALUES('" + email + "', '" + password + "', 'null')");
 
-                res.status(200);
+        res.status(200);
        return req.body();
-    //  return email;
        } catch (Exception e) {
          res.status(500);
           return e.getMessage();
        } finally {
 
       }});
-
-
-
-
-
-
-
-
-
-
-
 
 
 
