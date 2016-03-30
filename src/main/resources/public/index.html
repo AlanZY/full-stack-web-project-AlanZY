@@ -31,7 +31,6 @@ $(document).ready(function(){
 
 
          var send= JSON.stringify({ "signup-password": password , "signup-email": email});
-      alert(send);
       $.ajax({
           contentType:'application/json',
           url:"/adduser",
@@ -41,6 +40,7 @@ $(document).ready(function(){
           success: function(data)
           {
             alert("succeeded");
+            window.location.href='/index.html';
          }
 
         });

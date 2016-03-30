@@ -90,7 +90,7 @@ public class Main {
 
       stmt.executeUpdate("CREATE TABLE IF NOT EXISTS user_info (user_email varchar(100),  user_password  varchar(30),  user_name  varchar(30) )");
     //  stmt.executeUpdate("INSERT INTO users_info VALUES ('user_email','user_password','user_name')");
-      ResultSet rs = stmt.executeQuery("SELECT user_email, user_password FROM users_info");
+      ResultSet rs = stmt.executeQuery("SELECT user_email, user_password FROM user_info");
       ArrayList<String> output = new ArrayList<String>();
 
     while(rs.next())
