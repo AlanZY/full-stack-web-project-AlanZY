@@ -88,8 +88,8 @@ public class Main {
   //    String password = obj.getString("loginin-password");
       Statement stmt = connection.createStatement();
 
-  //    stmt.executeUpdate("CREATE TABLE IF NOT EXISTS users_test (test varchar(20)  )");
-  //    stmt.executeUpdate("INSERT INTO users_test VALUES ('user1')");
+    //  stmt.executeUpdate("CREATE TABLE IF NOT EXISTS users_test (test varchar(20)  )");
+      stmt.executeUpdate("INSERT INTO users_test VALUES ('testpo')");
       ResultSet rs = stmt.executeQuery("SELECT test FROM users_test");
      ArrayList<String> output = new ArrayList<String>();
 
@@ -117,7 +117,7 @@ public class Main {
         Map<String, Object> attributes = new HashMap<>();
         try{
         connection = DatabaseUrl.extract().getConnection();
-
+        System.out.println(req.body());
        JSONObject obj = new JSONObject(req.body());
 
 
@@ -128,7 +128,7 @@ public class Main {
 
 
        Statement stmt = connection.createStatement();
-       stmt.executeUpdate("INSERT INTO users_test" +
+       stmt.executeUpdate("INSERT INTO users_test(test)" +
               //  "VALUES('" + email + "')");
               "VALUES('testpost')");
 
