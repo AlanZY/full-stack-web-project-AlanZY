@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="stylesheets/recommended.css">
 
 <script src="js/login.js" type="text/javascript"></script>
-
+<script src="js/user_Ajax.js" type="text/javascript"></script>
 </head>
 
 <!-- left: select user to recommended  -->

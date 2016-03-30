@@ -28,9 +28,6 @@ import com.heroku.sdk.jdbc.DatabaseUrl;
 
 
 
-
-
-
 public class Main {
 
   public static void main(String[] args) {
@@ -123,15 +120,9 @@ public class Main {
 
         String email = obj.getString("signup-email");
         String password = obj.getString("signup-password");
-
-      //  String email = password;
-
-
        Statement stmt = connection.createStatement();
        stmt.executeUpdate("INSERT INTO user_info(user_email, user_password, user_name)" +
                 "VALUES('" + email + "', '" + password + "', 'null')");
-
-        res.status(200);
        return req.body();
        } catch (Exception e) {
          System.err.println("Exception: "+ e);
@@ -142,7 +133,7 @@ public class Main {
 
 
 
-
+/*
             get("/user", (req, res) -> {
               ArrayList<String> users = new ArrayList<String>();
               users.add("John Doe");
@@ -155,7 +146,7 @@ public class Main {
 
                return new ModelAndView(attributes, "user.ftl");
             }, new FreeMarkerEngine());
-
+*/
 
             get("/api/timeline_info", (req, res) -> {
                     Map<String, Object> data = new HashMap<>();
@@ -171,6 +162,35 @@ public class Main {
                     data.put("image3", "background: #FFC1C1;");
                     return data;
                 }, gson::toJson);
+
+/*
+                get("/getuser", (req, res) -> {
+
+                  Connection connection = null;
+                  List<Object> data = new ArrayList<>();
+                  connection = DatabaseUrl.extract().getConnection();
+                //  JSONObject obj = new JSONObject(req.body());
+
+                //  String email = obj.getString("loginin-email");
+                //  String password = obj.getString("loginin-password");
+                  Statement stmt = connection.createStatement();
+                  ResultSet rs = stmt.executeUpdate("SELECT user_name FROM user_info" +
+                          "WHERE user_email='john2@gmail.com' ");
+
+                    Map<String, Object> output = new HashMap<>();
+                  while (rs.next()) {
+                  output.put("user_email" , rs.getString("user_name"));
+                  }
+                  data.add(output);
+                  return data;
+                  }, gson::toJson);
+
+
+*/
+
+
+
+
 
 
 
@@ -206,7 +226,7 @@ public class Main {
 
 
                    return new ModelAndView(attributes, "recommendation.ftl");
-                }, new FreeMarkerEngine());
+                  }, new FreeMarkerEngine());
 
 
                     get("/api/info", (req, res ) ->
@@ -221,112 +241,6 @@ public class Main {
                       res.type("text/xml");
                       return xml;
                     });
-
-/*
-                  post("/adduser", (req, res) ->
-                  {
-                      ArrayList<String> tests = new ArrayList<String>();
-                      try{
-
-
-
-                      JSONObject obj = new JSONObject(req.body());
-                       String email = obj.getString("signin-email");
-
-                      tests.add(email);
-
-                      Map<String, Object> attributes = new HashMap<>();
-                      attributes.put("tests", tests);
-
-
-                      return req.body();
-                    }catch (Exception e) {
-        res.status(500);
-        return e.getMessage();
-      } finally {
-
-      }
-    });
-
-
-
-                post("/add",(req,res)->
-
-                  {
-
-                    Connection connection = null;
-                    Map<String, Object> attributes = new HashMap<>();
-                    try{
-                    connection = DatabaseUrl.extract().getConnection();
-
-                   JSONObject obj = new JSONObject(req.body());
-                    String email = obj.getString("signin-email");
-                    String password = obj.getString("signin-password");
-
-
-                   Statement stmt = connection.createStatement();
-                   stmt.executeUpdate("insert into users" +
-                            "(email_address, password)" +
-                            "values('" + email + "','" + password + "')");
-
-                   return req.body();
-                   } catch (Exception e) {
-                   attributes.put("message", "There was an error: " + e);
-                   return new ModelAndView(attributes, "error.ftl");
-                   } finally {
-                   if (connection != null) try{connection.close();} catch(SQLException e){}
-                  }}, new FreeMarkerEngine());
-
-
-
-
-
-
-
-                  post("/finduser", (req, res) ->
-                  {
-                    Connection connection = null;
-                    Map<String, Object> attributes = new HashMap<>();
-                    try{
-                    connection = DatabaseUrl.extract().getConnection();
-
-                   JSONObject obj = new JSONObject(req.body());
-                    String email = obj.getString("loginin-email");
-                    String password = obj.getString("loginin-password");
-
-
-                    Statement stmt = connection.createStatement();
-                    ResultSet rs = stmt.executeQuery("select * from users where email_address=13123@gmail.com ");
-
-                   ArrayList<String> output = new ArrayList<String>();
-                  while(rs.next())
-                  {
-                     output.add("read from users, " + "email: " + rs.getString("email_address") );
-                   }
-
-                  attributes.put("results",output);
-                   return new ModelAndView(attributes, "finduser.ftl");
-                   } catch (Exception e) {
-                   attributes.put("message", "There was an error: " + e);
-                   return new ModelAndView(attributes, "error.ftl");
-                   } finally {
-                   if (connection != null) try{connection.close();} catch(SQLException e){}
-                  }}, new FreeMarkerEngine());
-
-
-*/
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
