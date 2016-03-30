@@ -9,6 +9,23 @@
 <link rel="stylesheet" href="stylesheets/contact.css">
 
 <script src="js/login.js" type="text/javascript"></script>
+<script>
+
+$(function(){
+  $.ajax({
+    url:"/api/contact.xml" ,
+    success: function(result){
+      var data = JSON.parse(result);
+      alert(data);
+      $("#header_username").html(data.user_name);
+    }
+  });
+});
+
+
+</script>
+
+
 </head>
 
 <body id="body">
@@ -26,7 +43,7 @@
                  <ul class="header-ul">
                     <li class="header-li"><a href="recommendation">recommended</a></li>
                     <li class="header-li"><a href="contact.html">contact</a></li>
-                    <li class="download-paper header-li"><a href="javascript:void(0);" onclick="show(event,'div2');">start</a>
+                    <li class="download-paper header-li"><a href="javascript:void(0);" onclick="show(event,'div2');"   id="header_username">start</a>
                     </li>
                 </ul>
             </nav>
@@ -41,18 +58,18 @@
 
 
 	 <div id="div2" class="div2" onclick="show(event,'div2');" style="display:none">
-	 
+
         <div class="login_sign">
-			
-			    <div class="login_in_wrap_up" id="login_in_color">		  
+
+			    <div class="login_in_wrap_up" id="login_in_color">
 			    <a class="form_title" href="#0" onClick="login_switch()">login in</a>
 			    </div>
-			    <div class="sign_up_wrap_up" id="sign_up_color">	
+			    <div class="sign_up_wrap_up" id="sign_up_color">
 			     <a class="form_title" href="#" onClick="sign_switch()">sign up</a>
-				 </div>  
-					
-					
-	        <div class="login_in" id='login_in'> 
+				 </div>
+
+
+	        <div class="login_in" id='login_in'>
 				<form class="cd-form" >
 				    <p>
 						<label class="form">E-mail</label>
@@ -63,18 +80,18 @@
 						<label class="form">Password</label>
 						<input class="full-width has-padding has-border" id="loginin-password" type="text" placeholder="Password">
 					</p>
-					
+
 					<p>
 						<input class="full-width login" type="submit" value="Login in">
 					</p>
 				</form>
 			</div>
-			
-	  
-	  
-	  
-	         <div class="sign_up" id='sign_up'> 
-				<form class="cd-form" >  
+
+
+
+
+	         <div class="sign_up" id='sign_up'>
+				<form class="cd-form" >
 					<p>
 						<label class="form">E-mail</label>
 						<input class="full-width has-padding has-border" id="signin-email" type="email" placeholder="E-mail">
@@ -94,8 +111,8 @@
 					</p>
 				</form>
 			</div>
-			
-	 
+
+
      </div>
 </div>
 <a href="#0" class="cd-close-form" onClick=hide()>Close</a>
@@ -124,35 +141,35 @@
 
 <footer>
 
-<div >  
- 
-    <div class="footer">  
-    
+<div >
+
+    <div class="footer">
+
         <nav class="footer-nav">
             <div class="policyblock">
-              
-                <a href="policy.html" class="policy">Policy</a>           
+
+                <a href="policy.html" class="policy">Policy</a>
             </div>
         </nav>
-		
-		
+
+
 		<div class="logoblock">
 		    <div class="madeblock">
 	             <label class="made">MADE BY AlanZY</label>
 			</div>
-		    
+
 		</div>
-		
+
 		 <div class="addressblock">
 		<label class="address"> 135 N Bellefield Ave, Pittsburgh, PA 15260 </label>
 		</div>
-	
+
 	</div>
-	
-</div> 
-</footer> 
+
+</div>
+</footer>
 <!-- footer end  -->
 
- 
+
 </body>
 </html>

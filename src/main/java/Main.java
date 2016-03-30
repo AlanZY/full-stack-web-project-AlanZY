@@ -228,13 +228,13 @@ public class Main {
                   }, new FreeMarkerEngine());
 
 
-                    get("/api/info", (req, res ) ->
+                    get("/api/contact.xml", (req, res ) ->
                     {
                       Map<String, Object> data = new HashMap<>();
                       data.put("username","Smith");
                       String xml= "<?xml version=\"1.0\" encoding=\"UTF-8\"?>" +
                                   "<user_profile>" +
-                                          "<user_name> Allan </user_name>"+
+                                          "<user_name> Smith </user_name>"+
                                           "<num_timeline> 10 </num_timeline>" +
                                   "</user_profile>" ;
                       res.type("text/xml");
