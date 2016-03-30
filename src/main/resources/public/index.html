@@ -25,12 +25,13 @@ $(document).ready(function(){
       // var email = document.getElementById("signin-email").value;
        var password = document.getElementById("signin-password").value;
 
-        var obj = $('#signin-input').serializeJSON();
-       var send = JSON.stringify(obj);
+    //  var obj = $('#signin-input').serializeJSON();
+      // var send = JSON.stringify(obj);
+       //var send=password;
 
-
+var send= JSON.stringify({ "command": "on" })
 $.ajax({
-          url:"/testdb",
+          url:"/testuser",
           type:"POST",
           datatype: "json",
           data: send,

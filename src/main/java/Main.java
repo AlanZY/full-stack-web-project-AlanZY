@@ -28,54 +28,6 @@ import com.heroku.sdk.jdbc.DatabaseUrl;
 
 
 
-import java.sql.*;
-import java.util.*;
-import org.json.JSONObject;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.transform.*;
-import javax.xml.transform.stream.*;
-import javax.xml.transform.dom.*;
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-
-import java.net.URI;
-import java.net.URISyntaxException;
-
-import static spark.Spark.*;
-import spark.template.freemarker.FreeMarkerEngine;
-import spark.ModelAndView;
-import static spark.Spark.get;
-
-import static javax.measure.unit.SI.KILOGRAM;
-import javax.measure.quantity.Mass;
-import org.jscience.physics.model.RelativisticModel;
-import org.jscience.physics.amount.Amount;
-
-import com.heroku.sdk.jdbc.DatabaseUrl;
-import com.google.gson.Gson;
-import java.util.List;
-
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -157,7 +109,7 @@ public class Main {
 
 
 
-    post("/testdb",(req,res)->
+    post("/testuser",(req,res)->
 
       {
 
@@ -167,15 +119,20 @@ public class Main {
         connection = DatabaseUrl.extract().getConnection();
 
        JSONObject obj = new JSONObject(req.body());
-        String email = obj.getString("signin-email");
-        //String password = obj.getString("signin-password");
+
+         
+        String email = obj.getString("command");
+    //    String password = obj.getString("signin-password");
+
+      //  String email = password;
 
 
        Statement stmt = connection.createStatement();
        stmt.executeUpdate("INSERT INTO users_test" +
                 "VALUES('" + email + "')");
                 res.status(200);
-                       return req.body();
+       return req.body();
+    //  return email;
        } catch (Exception e) {
          res.status(500);
           return e.getMessage();
