@@ -29,8 +29,11 @@ $(document).ready(function(){
       // var send = JSON.stringify(obj);
        //var send=password;
 
-   var send= JSON.stringify({ "command": "on" })
 
+var send= JSON.stringify({ "signin-password": password })
+
+//   var send= JSON.stringify({ "command": "on" })
+alert(send);
 $.ajax({
           contentType:'application/json',
           url:"/testuser",
@@ -39,7 +42,7 @@ $.ajax({
           data: send,
           success: function(data)
           {
-            alert("device control succeeded");
+            alert("succeeded");
          }
 
         });
