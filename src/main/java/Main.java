@@ -111,7 +111,7 @@ post("/user_info_image", (req, res) ->
   String username_image=obj.getString("edit_username");
   String image=obj.getString("edit_userimage");
   Statement stmt = connection.createStatement();
-  stmt.executeUpdate("INSERT INTO user_info_image (user_name,  photo )"+ "VALUES('"+username_image+ "','"+image+"')");//
+  stmt.executeUpdate("INSERT INTO user_info_image (user_name,  user_image )"+ "VALUES('"+username_image+ "','"+image+"')");//
 //  stmt.executeUpdate("INSERT INTO users_info_image VALUES ('user_email','user_password','user_name')");
   return req.body();
 }catch(Exception e){
