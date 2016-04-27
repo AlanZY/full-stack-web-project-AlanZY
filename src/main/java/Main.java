@@ -28,7 +28,7 @@ import com.heroku.sdk.jdbc.DatabaseUrl;
 
 
 public class Main {
-  
+
   public static void main(String[] args) {
 
      Gson gson = new Gson();
@@ -78,23 +78,17 @@ public class Main {
       Map<String, Object> attributes = new HashMap<>();
       try{
       connection = DatabaseUrl.extract().getConnection();
-
       Statement stmt = connection.createStatement();
-
       stmt.executeUpdate("CREATE TABLE IF NOT EXISTS user_info (user_email varchar(100),  user_password  varchar(30),  user_name  varchar(30) )");
     //  stmt.executeUpdate("INSERT INTO users_info VALUES ('user_email','user_password','user_name')");
-
-
       ResultSet rs = stmt.executeQuery("SELECT user_email, user_password FROM user_info");
       ArrayList<String> output = new ArrayList<String>();
 
     while(rs.next())
     {
-
        output.add("read user " + "email: " + rs.getString("user_email") + "     password: " + rs.getString("user_password") );
-
      }
-    attributes.put("results",output);
+     attributes.put("results",output);
      return new ModelAndView(attributes, "user_info.ftl");
      } catch (Exception e) {
      attributes.put("message", "There was an error: " + e);
@@ -104,16 +98,69 @@ public class Main {
     }}, new FreeMarkerEngine());
 
 
+// add user image Database
+post("/user_info_image", (req, res) ->
+{
+  Connection connection = null;
+  Map<String, Object> attributes = new HashMap<>();
+  try{
+  connection = DatabaseUrl.extract().getConnection();
+   System.out.println(req.body());
+  JSONObject obj=new JSONObject(req.body());
 
-    post("/adduser",(req,res)->
+  String username_image=obj.getString("edit_username");
+  String image=obj.getString("edit_userimage");
+  Statement stmt = connection.createStatement();
+  stmt.executeUpdate("INSERT INTO user_info_image (user_name,  photo )"+ "VALUES('"+username_image+ "','"+image+"')");//
+//  stmt.executeUpdate("INSERT INTO users_info_image VALUES ('user_email','user_password','user_name')");
+  return req.body();
+}catch(Exception e){
+  System.err.println("Exception: "+e);
+return e.getMessage();
+       } finally {
+        if (connection != null) try{connection.close();} catch(SQLException e){}
+      }});
 
+
+
+
+      get("/user_image", (req, res) ->
       {
-
         Connection connection = null;
         Map<String, Object> attributes = new HashMap<>();
         try{
         connection = DatabaseUrl.extract().getConnection();
+        Statement stmt = connection.createStatement();
+        stmt.executeUpdate("CREATE TABLE IF NOT EXISTS user_info_image (user_name varchar(100),  user_image  varchar(10000000) )");
+      //  stmt.executeUpdate("INSERT INTO users_info VALUES ('user_email','user_password','user_name')");
+        ResultSet rs = stmt.executeQuery("SELECT user_name, user_image FROM user_info_image");
+        ArrayList<String> output = new ArrayList<String>();
 
+      while(rs.next())
+      {
+         output.add("read user " + "name: " + rs.getString("user_name") + "     photo: " + rs.getString("user_image") );
+       }
+       attributes.put("results",output);
+       return new ModelAndView(attributes, "image.ftl");
+       } catch (Exception e) {
+       attributes.put("message", "There was an error: " + e);
+       return new ModelAndView(attributes, "error.ftl");
+       } finally {
+       if (connection != null) try{connection.close();} catch(SQLException e){}
+      }}, new FreeMarkerEngine());
+
+
+
+
+
+
+    post("/adduser",(req,res)->
+      {
+        Connection connection = null;
+        Map<String, Object> attributes = new HashMap<>();
+        try{
+        connection = DatabaseUrl.extract().getConnection();
+        System.out.println(req.body());
         JSONObject obj = new JSONObject(req.body());
 
 
