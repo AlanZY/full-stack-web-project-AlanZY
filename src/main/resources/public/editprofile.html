@@ -33,8 +33,8 @@
            var url=result[0].user_image;
            alert(url);
         //   document.getElementById("changed_image").src='data:image/png;base64,' + base64Img;
-            var changed_image_url=document.getElementById("changed_image");
-            changed_image.setAttribute("src", changed_image_url);
+            var changed_image=document.getElementById("changed_image");
+            changed_image.setAttribute("src", url);
           //  document.getElementById("changed_image").src= base64Img;
          }
        }
