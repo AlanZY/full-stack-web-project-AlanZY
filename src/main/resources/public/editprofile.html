@@ -32,10 +32,8 @@
           // alert(result.user_name);
            var url=result[0].user_image;
            alert(url);
-        //   $("#testurl").html(url);
+           $("#changed_image").html(url);
         //   document.getElementById("changed_image").src='data:image/png;base64,' + base64Img;
-            var changed_image=document.getElementById("changed_image");
-            changed_image.setAttribute("src", url);
           //  document.getElementById("changed_image").src= base64Img;
          }
        }
@@ -225,9 +223,9 @@ $(document).ready(function(){
             <input type="file" id="inputFileToLoad"  onchange="loadFile(event)">
 
             <img id="output_image"  src="picture/test.jpg" alt=""/>
-            <img id="changed_image"  src="picture/test.jpg"  alt=" "/>
+          
             <div id="imgTest">   </div>
-
+            <label id="changed_image"></label>
 
         <input type="submit" id="submit_userprofile" class="btn sumbit_profile" value="Submit"  />
     </form>
