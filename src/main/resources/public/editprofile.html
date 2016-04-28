@@ -43,31 +43,6 @@
    </script>
 -->
 
-
-<script>
-
-function load(fileLoadedEvent)
-{
-   var srcData = fileLoadedEvent.target.result;
-  var newImage=document.createElement('img');
-  newImage.src = srcData;
-
-  document.getElementById("imgTest").innerHTML=newImage.outerHTML;
-  var dataurl=document.getElementById("imgTest").innerHTML;
-  return dataurl;
-
-}
-
-
-
-
-
-</script>
-
-
-
-
-
 <script>
 /*
 function testimage(){
@@ -100,7 +75,6 @@ function testimage(){
 
 */
 
-
 $(document).ready(function(){
   $('#submit_userprofile').click(function()
    {
@@ -125,23 +99,35 @@ $(document).ready(function(){
      {
        var fileToLoad=filesSelected[0];
        var fileReader=new FileReader();
-       fileReader.onload=load(fileLoadedEvent);
+       fileReader.onload=function(fileLoadedEvent)
+       {
+          var srcData = fileLoadedEvent.target.result;
+         var newImage=document.createElement('img');
+         newImage.src = srcData;
+
+         document.getElementById("imgTest").innerHTML=newImage.outerHTML;
+         var dataurl=document.getElementById("imgTest").innerHTML;
+
+         send=JSON.stringify({ "edit_username" : "M2", "edit_userimage": dataurl });
+         alert(send);
+         $.ajax({
+           contentType: 'application/json',
+           url:"/user_info_image",
+           type:"POST",
+           datatype: "json",
+           data:send,
+           success: function(data)
+           {
+             alert("succeed");
+             window.location.href="/editprofile.html";
+           }
+         });
+
+
+       }
        fileReader.readAsDataURL(fileToLoad);
      }
-     send=JSON.stringify({ "edit_username" : "M2", "edit_userimage": dataurl });
-     alert(send);
-     $.ajax({
-       contentType: 'application/json',
-       url:"/user_info_image",
-       type:"POST",
-       datatype: "json",
-       data:send,
-       success: function(data)
-       {
-         alert("succeed");
-         window.location.href="/editprofile.html";
-       }
-     });
+
 
 });
 });
