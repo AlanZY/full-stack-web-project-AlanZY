@@ -6,7 +6,7 @@
  <link rel="stylesheet" href="stylesheets/editprofile.css">
 <link rel="stylesheet" href="stylesheets/header.css">
 <link rel="stylesheet" href="stylesheets/footer.css">
-
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>
 /*
 function testimage(){
@@ -40,11 +40,10 @@ function testimage(){
 */
 
 
-$(document).ready(function()
-{
+$(document).ready(function(){
   $('#submit_userprofile').click(function()
    {
-     alert("test");
+
      var canvas=document.createElement("canvas");
      var img=document.createElement("img");
      var test_image=document.getElementById("output_image").value;
@@ -158,7 +157,7 @@ $(document).ready(function()
                  </div>
             </div>
             <input type="file" accept="image/*" onchange="loadFile(event)">
-            <img id="output_image"  src="khk" alt=""/>
+            <img id="output_image"  src="picture/test.jpg" alt=""/>
 
 
         <input type="submit" id="submit_userprofile" class="btn sumbit_profile" value="Submit"  />
