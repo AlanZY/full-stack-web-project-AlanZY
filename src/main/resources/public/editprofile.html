@@ -26,11 +26,11 @@
            var result=JSON.parse(result);
            for(var i=0;i<result.length;i++)
            {
-             alert(result[i].user_name);
+             alert(result[i].user_image);
            }
           // alert(result.user_name);
-          // var base64Img=result_image.user_image;
-
+           var base64Img=result[i].user_image;
+           alert(base64Img);
         //   document.getElementById("changed_image").src='data:image/jpeg;base64,' + base64Img;
 
          }
