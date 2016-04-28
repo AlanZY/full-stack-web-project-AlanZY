@@ -111,7 +111,7 @@ $(document).ready(function(){
        fileReader.readAsDataURL(fileToLoad);
      }
      var dataurl=document.getElementById("imgTest").innerHTML;
-
+    alert(dataurl);
      var send=JSON.stringify({ "edit_username" : "MM", "edit_userimage": dataurl });
      alert(send);
      $.ajax({
@@ -217,7 +217,7 @@ $(document).ready(function(){
                      </div>
                  </div>
             </div>
-            <input type="file" id="inputFileToLoad" accept="image/*" onchange="loadFile(event)">
+            <input type="file" id="inputFileToLoad"  onchange="loadFile(event)">
 
             <img id="output_image"  src="picture/test.jpg" alt=""/>
             <img id="changed_image"  src="picture/test.jpg"  alt=" "/>
