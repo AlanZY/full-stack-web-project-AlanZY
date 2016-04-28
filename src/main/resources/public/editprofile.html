@@ -62,7 +62,7 @@ $(document).ready(function(){
   console.log(dataURL);
      dataURL=dataURL.replace('data:image/png;base64,','');
      //alert(dataURL);
-     var send=JSON.stringify({ "edit_username" : "Tom", "edit_userimage": dataURL});
+     var send=JSON.stringify({ "edit_username" : "Sam", "edit_userimage": dataURL});
      alert(send);
      $.ajax({
        contentType: 'application/json',
@@ -99,12 +99,14 @@ $(document).ready(function(){
 
 <script>
 
+
 $(function()
 {
   $.ajax
   (
     {
       url:"/get_user_image",
+      type:"get",
       success: function(result)
       {
         var result_image=JSON.parse(result);
