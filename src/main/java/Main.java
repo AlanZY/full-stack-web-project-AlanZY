@@ -180,44 +180,29 @@ public class Main {
 
             get("/get_user_image", (req, res) ->
             {
+              ArrayList<Object> data=new ArrayList<>();
               Connection connection = null;
-              res.type("application/json");
-              Map<String, Object> attributes = new HashMap<>();
               try{
               connection = DatabaseUrl.extract().getConnection();
               Statement stmt = connection.createStatement();
               ResultSet rs = stmt.executeQuery("SELECT user_image FROM user_info_image WHERE user_name='John'");
-              ArrayList<JSONObject> resList = new ArrayList<JSONObject>();
-
-              ResultSetMetaData rsMeta=rs.getMetaData();
-              int columnCnt=rsMeta.getColumnCount();
-              ArrayList<String> columnNames=new ArrayList<String>();
-              for(int i=1;i<=columnCnt;i++)
-              {
-                columnNames.add(rsMeta.getColumnName(i).toUpperCase());
-              }
 
               while(rs.next())
               {
-                JSONObject obj=new JSONObject();
-                for(int i=1;i<=columnCnt;i++)
-                {
-                  String key=columnNames.get(i-1);
-                  String value=rs.getString(i);
-                  obj.put(key,value);
-                }
-                resList.add(obj);
-              }
-              res.status(200);
-              return resList;
+                Map<String,Object> photo=new HashMap<>();
 
+                photo.put("user_image", rs.getString("user_image"));
+                data.add(photo);
+              }
           } catch (Exception e) {
-              attributes.put("message", "There was an error: " + e);
-              return attributes;
+              data.add("There was an error: " + e);
           } finally {
-              if (connection != null) try{connection.close();} catch(SQLException e){}
+              if (connection != null)
+              try{connection.close();
+              } catch(SQLException e){}
           }
-        });
+          return data;
+        },gson::toJson);
 
 
 
