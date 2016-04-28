@@ -7,8 +7,9 @@ $(function()
       url:"/api/timeline_info",
       success: function(result)
       {
-
+        alert(result);
         var result1=JSON.parse(result);
+        alert(result1);
         $("#h1").html(result1.title1);
         $("#p1").html(result1.content1);
         var image1=document.getElementById("image1");
