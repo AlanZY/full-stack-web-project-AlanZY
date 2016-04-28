@@ -31,9 +31,9 @@
        //   }
           // alert(result.user_name);
            var base64Img=result[0].user_image;
-           alert(base64Img);
-           document.getElementById("changed_image").src='data:image/png;base64,' + base64Img;
-
+          // alert(base64Img);
+        //   document.getElementById("changed_image").src='data:image/png;base64,' + base64Img;
+            document.getElementById("changed_image").src= base64Img;
          }
        }
      );
