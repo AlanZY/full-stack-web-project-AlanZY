@@ -281,14 +281,17 @@ body{margin:0;}
 display: block;
   position: absolute;
  margin-right: 80px;
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
 }
 
 .after_change{
 display: block;
  margin-right: 80px;
-  width: 160px;
-  height: 160px;
+  width: 140px;
+  height: 140px;
 }
 
+.select_photo{
+margin-top: 20px;
+}
