@@ -110,7 +110,7 @@ public class Main {
         Statement stmt = connection.createStatement();
         stmt.executeUpdate("CREATE TABLE IF NOT EXISTS user_info_image (user_name varchar(100),  user_image  varchar(10000000) )");
        //stmt.executeUpdate("INSERT INTO user_info_image VALUES ('Smith','it should be dataurl data')");
-        ResultSet rs = stmt.executeQuery("SELECT user_name, user_image FROM user_info_image WHERE user_name='Smith' ");
+        ResultSet rs = stmt.executeQuery("SELECT user_name, user_image FROM user_info_image  ");
         ArrayList<String> output = new ArrayList<String>();
 
       while(rs.next())
