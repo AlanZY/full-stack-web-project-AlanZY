@@ -95,7 +95,7 @@ $(document).ready(function(){
      //alert(dataURL);
      */
      var filesSelected=document.getElementById("inputFileToLoad").files;
-     alert(filesSelected.length);
+
      if(filesSelected.length>0)
      {
        var fileToLoad=filesSelected[0];
@@ -219,7 +219,7 @@ $(document).ready(function(){
             <input type="file" id="inputFileToLoad" accept="image/*" onchange="loadFile(event)">
             <img id="output_image"  src="picture/test.jpg" alt=""/>
             <img id="changed_image"  src="picture/test.jpg"  alt=" "/>
-            <input id="imgText">
+            <div id="imgText">   </div>
 
 
         <input type="submit" id="submit_userprofile" class="btn sumbit_profile" value="Submit"  />
