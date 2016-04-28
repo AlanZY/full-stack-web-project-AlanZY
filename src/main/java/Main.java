@@ -194,7 +194,7 @@ public class Main {
               List<String> columnNames=new ArrayList<String<();
               for(int i=1;i<=columnCnt;i++)
               {
-                columnNames.add(rs.Meta.getColumnName(i).toUpperCase());
+                columnNames.add(rsMeta.getColumnName(i).toUpperCase());
               }
 
               while(rs.next())
@@ -208,12 +208,16 @@ public class Main {
                 }
                 resList.add(obj);
               }
-            } catch (Exception e) {
-         attributes.put("message", "There was an error: " + e);
-         return attributes;
-     } finally {
-         if (connection != null) try{connection.close();} catch(SQLException e){}
-     }
+              res.status(200);
+              return resList;
+
+          } catch (Exception e) {
+              attributes.put("message", "There was an error: " + e);
+              return attributes;
+          } finally {
+              if (connection != null) try{connection.close();} catch(SQLException e){}
+          }
+        });
    });
 
 
