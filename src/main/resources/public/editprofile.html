@@ -31,7 +31,7 @@
           // alert(result.user_name);
            var base64Img=result[0].user_image;
            alert(base64Img);
-           document.getElementById("changed_image").src='data:image/jpeg;base64,' + base64Img;
+           document.getElementById("changed_image").src='data:image/png;base64,' + base64Img;
 
          }
        }
@@ -78,7 +78,7 @@ function testimage(){
 $(document).ready(function(){
   $('#submit_userprofile').click(function()
    {
-
+    /*
      var canvas=document.createElement("canvas");
      var img=document.createElement("img");
      var test_image=document.getElementById("output_image").value;
@@ -92,7 +92,25 @@ $(document).ready(function(){
 
      dataURL=dataURL.replace('data:image/png;base64,','');
      //alert(dataURL);
-     var send=JSON.stringify({ "edit_username" : "John", "edit_userimage": dataURL});
+     */
+     var filesSelected=document.getElementById("inputFileToLoad").files;
+     if(filesSelected.length>0)
+     {
+       var fileToLoad=filesSelected[0];
+       var fileReader=new fileReader();
+       fileReader.onload=function(fileLoadedEvent)
+       {
+         var scrData=fileLoadedEvent.target.result;
+         var newImage=document.createElement('img');
+         newImage.src=srcData;
+
+         document.getElementById("imgTest").innerHTML=newImage.outerHTML;
+         alert(document.getElementById("imgTest").innerHTML);
+       }
+       fileReader.readAsDataURL(fileToLoad);
+     }
+
+     var send=JSON.stringify({ "edit_username" : "M.g", "edit_userimage": "test"});
      alert(send);
      $.ajax({
        contentType: 'application/json',
@@ -196,9 +214,10 @@ $(document).ready(function(){
                      </div>
                  </div>
             </div>
-            <input type="file" accept="image/*" onchange="loadFile(event)">
+            <input type="file" id="inputFileToLoad" accept="image/*" onchange="loadFile(event)">
             <img id="output_image"  src="picture/test.jpg" alt=""/>
             <img id="changed_image"  src="picture/test.jpg"  alt=" "/>
+            <input id="imgText">
 
 
         <input type="submit" id="submit_userprofile" class="btn sumbit_profile" value="Submit"  />
