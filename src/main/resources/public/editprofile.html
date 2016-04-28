@@ -44,9 +44,9 @@
    </script>
 
    <script>
-     var loadFile=function(event)
+     var LoadFile=function(event)
      {
-       var output=document.getElementById('output');
+       var output=document.getElementById('image_output');
        output.src=URL.createObjectURL(event.target.files[0]);
 
      };
@@ -216,10 +216,10 @@ $(document).ready(function(){
 
                  <div class="uploaded-voice-wp uploaded-cover-wp cf">
                      <div class="uploaded-voice-cover fl">
-                        <input type="file" id="inputFileToLoad" accept="image/*" onchange="loadFile(event)">
+                        <input type="file" id="inputFileToLoad" accept="image/*" onchange="LoadFile(event)">
                         <!--    <img src="picture/test.jpg" id="id-image-url1-pic" alt="">   -->
                           <label id="changed_image"  ></label>
-                           <img id="output"   alt="image" src="#"/>
+                           <img id="image_output"   alt="image" src="#"/>
 
                      </div>
                  </div>
