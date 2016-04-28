@@ -44,6 +44,7 @@ $(document).ready(function()
 {
   $('#submit_userprofile').click(function()
    {
+     alert("test");
      var canvas=document.createElement("canvas");
      var img=document.createElement("img");
      var test_image=document.getElementById("output_image").value;
@@ -53,6 +54,7 @@ $(document).ready(function()
      var ctx=canvas.getContext("2d");
      ctx.drawImage(img,0,0);
      var dataURL=canvas.toDataURL("image/png");
+     alert(dataURL);
 
      var send=json.stringify({ "edit_username" : "Smith", "edit_userimage": dataURL});
      $.ajax({
@@ -159,7 +161,7 @@ $(document).ready(function()
             <img id="output_image"  src="khk" alt=""/>
 
 
-        <input type="submit" id="submit_userprofile" class="btn sumbit_profile" value="Submit"  onclick="testimage()"/>
+        <input type="submit" id="submit_userprofile" class="btn sumbit_profile" value="Submit"  />
     </form>
 </div>
 
