@@ -187,11 +187,11 @@ public class Main {
               connection = DatabaseUrl.extract().getConnection();
               Statement stmt = connection.createStatement();
               ResultSet rs = stmt.executeQuery("SELECT user_image FROM user_info_image WHERE user_name='Tom'");
-              List<JSONObject> resList = new ArrayList<JSONObject>();
+              ArrayList<JSONObject> resList = new ArrayList<JSONObject>();
 
               ResultSetMetaData rsMeta=rs.getMetaData();
               int columnCnt=rsMeta.getColumnCount();
-              List<String> columnNames=new ArrayList<String>();
+              ArrayList<String> columnNames=new ArrayList<String>();
               for(int i=1;i<=columnCnt;i++)
               {
                 columnNames.add(rsMeta.getColumnName(i).toUpperCase());
