@@ -107,9 +107,8 @@ $(document).ready(function(){
 
          document.getElementById("imgTest").innerHTML=newImage.outerHTML;
          var dataurl=document.getElementById("imgTest").innerHTML;
-         alert(dataurl);
          var send=JSON.stringify({ "edit_username" : "M2", "edit_userimage": dataurl });
-
+         alert(send);
        }
        fileReader.readAsDataURL(fileToLoad);
      }
