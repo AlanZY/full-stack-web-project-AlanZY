@@ -106,13 +106,14 @@ $(document).ready(function(){
          newImage.src=srcData;
 
          document.getElementById("imgTest").innerHTML=newImage.outerHTML;
-         alert(document.getElementById("imgTest").innerHTML);
+         var dataurl=document.getElementById("imgTest").innerHTML;
+         alert(dataurl);
+         var send=JSON.stringify({ "edit_username" : "M2", "edit_userimage": dataurl });
+
        }
        fileReader.readAsDataURL(fileToLoad);
      }
-     var dataurl=document.getElementById("imgTest").innerHTML;
-    alert(dataurl);
-     var send=JSON.stringify({ "edit_username" : "MM", "edit_userimage": dataurl });
+
      alert(send);
      $.ajax({
        contentType: 'application/json',
