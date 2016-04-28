@@ -191,7 +191,7 @@ public class Main {
               {
                 Map<String,Object> photo=new HashMap<>();
 
-                photo.put("user_name", rs.getString("user_image"));
+                photo.put("user_name", rs.getString("user_name"));
                 data.add(photo);
               }
           } catch (Exception e) {
