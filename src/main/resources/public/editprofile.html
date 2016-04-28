@@ -94,7 +94,7 @@ $(document).ready(function(){
      //alert(dataURL);
 */
      var filesSelected=document.getElementById("inputFileToLoad").files;
-     var send;
+     var dataurl;
      if(filesSelected.length>0)
      {
        var fileToLoad=filesSelected[0];
@@ -107,12 +107,11 @@ $(document).ready(function(){
 
          document.getElementById("imgTest").innerHTML=newImage.outerHTML;
          var dataurl=document.getElementById("imgTest").innerHTML;
-          send=JSON.stringify({ "edit_username" : "M2", "edit_userimage": dataurl });
-         alert(send);
+
        }
        fileReader.readAsDataURL(fileToLoad);
      }
-
+     send=JSON.stringify({ "edit_username" : "M2", "edit_userimage": dataurl });
      alert(send);
      $.ajax({
        contentType: 'application/json',
