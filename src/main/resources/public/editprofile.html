@@ -10,6 +10,31 @@
    <script type="text/javascript"></script>
    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 
+   <script>
+
+
+   $(function()
+   {
+     $.ajax
+     (
+       {
+         url:"/get_user_image",
+         type:"get",
+         success: function(result)
+         {
+           alert(result);
+           var result_image=JSON.parse(result);
+           //alert(result_image.user_image);
+           var base64Img=result_image.user_image;
+           document.getElementById("changed_image").src='data:image/jpeg;base64,' + base64Img;
+
+         }
+       }
+     );
+   });
+
+
+   </script>
 
 
 <script>
@@ -59,10 +84,10 @@ $(document).ready(function(){
      ctx.drawImage(img,0,0);
      var dataURL=canvas.toDataURL("image/png");
   //
-  console.log(dataURL);
+
      dataURL=dataURL.replace('data:image/png;base64,','');
      //alert(dataURL);
-     var send=JSON.stringify({ "edit_username" : "Sam", "edit_userimage": dataURL});
+     var send=JSON.stringify({ "edit_username" : "John", "edit_userimage": dataURL});
      alert(send);
      $.ajax({
        contentType: 'application/json',
@@ -97,30 +122,6 @@ $(document).ready(function(){
 
 
 
-<script>
-
-
-$(function()
-{
-  $.ajax
-  (
-    {
-      url:"/get_user_image",
-      type:"get",
-      success: function(result)
-      {
-        var result_image=JSON.parse(result);
-        alert(result_image.user_image);
-        var base64Img=result_image.user_image;
-        document.getElementById("changed_image").src='data:image/jpeg;base64,' + base64Img;
-
-      }
-    }
-  );
-});
-
-
-</script>
 
 </head>
 
