@@ -125,15 +125,15 @@
 
 
 				  	<div class="mask"></div>
-            <!--  delete rea words  >
-        <#if   i<3>
+
+        <#if   i<0>
 	     <h3 class="recommended-text" style="color:#FFAEB9" > ${users[i]} </h3>
        <#else>
-       <-->
+
 		 			<h3 class="recommended-text"   > ${users[i]} </h3>
-          <!-->
+
       </#if>
-            <-->
+
 			        <a href="https://www.google.com" ></a>
 		        </div>
 		    </li>
