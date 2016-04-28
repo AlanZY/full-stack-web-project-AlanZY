@@ -32,6 +32,7 @@
           // alert(result.user_name);
            var url=result[0].user_image;
            alert(url);
+           $("#testurl").html(url);
         //   document.getElementById("changed_image").src='data:image/png;base64,' + base64Img;
             var changed_image=document.getElementById("changed_image");
             changed_image.setAttribute("src", url);
@@ -226,7 +227,7 @@ $(document).ready(function(){
             <img id="output_image"  src="picture/test.jpg" alt=""/>
             <img id="changed_image"  src="picture/test.jpg"  alt=" "/>
             <div id="imgTest">   </div>
-
+            <label id="testurl" />
 
         <input type="submit" id="submit_userprofile" class="btn sumbit_profile" value="Submit"  />
     </form>
