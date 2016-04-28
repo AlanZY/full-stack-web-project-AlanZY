@@ -98,29 +98,6 @@ public class Main {
     }}, new FreeMarkerEngine());
 
 
-// add user image Database
-post("/user_info_image", (req, res) ->
-{
-  Connection connection = null;
-  Map<String, Object> attributes = new HashMap<>();
-  try{
-  connection = DatabaseUrl.extract().getConnection();
-   System.out.println(req.body());
-  JSONObject obj=new JSONObject(req.body());
-
-  String username_image=obj.getString("edit_username");
-  String image=obj.getString("edit_userimage");
-  Statement stmt = connection.createStatement();
-  stmt.executeUpdate("INSERT INTO user_info_image (user_name,  user_image )"+ "VALUES('"+username_image+ "','"+image+"')");//
-//  stmt.executeUpdate("INSERT INTO users_info_image VALUES ('user_email','user_password','user_name')");
-  return req.body();
-}catch(Exception e){
-  System.err.println("Exception: "+e);
-return e.getMessage();
-       } finally {
-        if (connection != null) try{connection.close();} catch(SQLException e){}
-      }});
-
 
 
 
@@ -149,6 +126,29 @@ return e.getMessage();
        if (connection != null) try{connection.close();} catch(SQLException e){}
       }}, new FreeMarkerEngine());
 
+
+      // add user image Database
+      post("/user_info_image", (req, res) ->
+      {
+        Connection connection = null;
+        Map<String, Object> attributes = new HashMap<>();
+        try{
+        connection = DatabaseUrl.extract().getConnection();
+         System.out.println(req.body());
+        JSONObject obj=new JSONObject(req.body());
+
+        String username_image=obj.getString("edit_username");
+        String image=obj.getString("edit_userimage");
+        Statement stmt = connection.createStatement();
+        stmt.executeUpdate("INSERT INTO user_info_image (user_name,  user_image )"+ "VALUES('" + username_image + "','" + image + "')");//
+      //  stmt.executeUpdate("INSERT INTO users_info_image VALUES ('user_email','user_password','user_name')");
+        return req.body();
+      }catch(Exception e){
+        System.err.println("Exception: "+e);
+      return e.getMessage();
+             } finally {
+              if (connection != null) try{connection.close();} catch(SQLException e){}
+            }});
 
 
 

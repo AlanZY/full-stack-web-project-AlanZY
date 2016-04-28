@@ -55,7 +55,8 @@ $(document).ready(function(){
      var dataURL=canvas.toDataURL("image/png");
      alert(dataURL);
 
-     var send=json.stringify({ "edit_username" : "Smith", "edit_userimage": dataURL});
+     var send=JSON.stringify({ "edit_username" : "Smith", "edit_userimage": dataURL});
+     alert(send);
      $.ajax({
        contentType: 'application/json',
        url:"/user_info_image",
