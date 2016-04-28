@@ -101,9 +101,9 @@ $(document).ready(function(){
        var fileReader=new FileReader();
        fileReader.onload=function(fileLoadedEvent)
        {
-         var scrData=fileLoadedEvent.target.result;
+          var srcData = fileLoadedEvent.target.result;
          var newImage=document.createElement('img');
-         newImage.src=srcData;
+         newImage.src = srcData;
 
          document.getElementById("imgTest").innerHTML=newImage.outerHTML;
          var dataurl=document.getElementById("imgTest").innerHTML;
