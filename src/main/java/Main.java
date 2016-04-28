@@ -186,7 +186,7 @@ public class Main {
               try{
               connection = DatabaseUrl.extract().getConnection();
               Statement stmt = connection.createStatement();
-              ResultSet rs = stmt.executeQuery("SELECT user_image FROM user_info_image WHERE user_name='Sam'");
+              ResultSet rs = stmt.executeQuery("SELECT user_image FROM user_info_image WHERE user_name='John'");
               ArrayList<JSONObject> resList = new ArrayList<JSONObject>();
 
               ResultSetMetaData rsMeta=rs.getMetaData();

@@ -22,9 +22,9 @@
          type:"get",
          success: function(result)
          {
-           alert(result);
+          // alert(result);
            var result_image=JSON.parse(result);
-           //alert(result_image.user_image);
+           alert(result_image);
            var base64Img=result_image.user_image;
            document.getElementById("changed_image").src='data:image/jpeg;base64,' + base64Img;
 
