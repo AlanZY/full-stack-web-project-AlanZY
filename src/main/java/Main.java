@@ -110,7 +110,7 @@ public class Main {
         Statement stmt = connection.createStatement();
         stmt.executeUpdate("CREATE TABLE IF NOT EXISTS user_info_image (user_name varchar(100),  user_image  varchar(10000000) )");
        //stmt.executeUpdate("INSERT INTO user_info_image VALUES ('Smith','it should be dataurl data')");
-        ResultSet rs = stmt.executeQuery("SELECT user_name, user_image FROM user_info_image WHERE user_name='Tom' ");
+        ResultSet rs = stmt.executeQuery("SELECT user_name, user_image FROM user_info_image");
         ArrayList<String> output = new ArrayList<String>();
 
       while(rs.next())
@@ -176,6 +176,48 @@ public class Main {
        } finally {
         if (connection != null) try{connection.close();} catch(SQLException e){}
       }});
+
+
+            get("/get_user_image", (req, res) ->
+            {
+              Connection connection = null;
+              res.type("application/json");
+              Map<String, Object> attributes = new HashMap<>();
+              try{
+              connection = DatabaseUrl.extract().getConnection();
+              Statement stmt = connection.createStatement();
+              ResultSet rs = stmt.executeQuery("SELECT user_image FROM user_info_image WHERE user_name='Tom'");
+              List<JSONObject> resList = new ArrayList<JSONObject>();
+
+              ResultSetMetaData rsMeta=rs.getMetaData();
+              int columnCnt=rsMeta.getColumnCount();
+              List<String> columnNames=new ArrayList<String<();
+              for(int i=1;i<=columnCnt;i++)
+              {
+                columnNames.add(rs.Meta.getColumnName(i).toUpperCase());
+              }
+
+              while(rs.next())
+              {
+                JSONObject obj=new JSONObject();
+                for(int i=1;i<=columnCnt;i++)
+                {
+                  String key=columnNames.get(i-1);
+                  String value=rs.getString(i);
+                  obj.put(key,value);
+                }
+                resList.add(obj);
+              }
+            } catch (Exception e) {
+         attributes.put("message", "There was an error: " + e);
+         return attributes;
+     } finally {
+         if (connection != null) try{connection.close();} catch(SQLException e){}
+     }
+   });
+
+
+
 
 
 

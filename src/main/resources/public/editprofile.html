@@ -104,12 +104,12 @@ $(function()
   $.ajax
   (
     {
-      url:"user_image",
+      url:"/get_user_image",
       success: function(result)
       {
-        var result1=JSON.parse(result);
-        alert(result1.user_image);
-        var base64Img=result1.user_image;
+        var result_image=JSON.parse(result);
+        alert(result_image.user_image);
+        var base64Img=result_image.user_image;
         document.getElementById("changed_image").src='data:image/jpeg;base64,' + base64Img;
 
       }
