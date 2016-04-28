@@ -94,11 +94,11 @@ $(document).ready(function(){
      //alert(dataURL);
 */
      var filesSelected=document.getElementById("inputFileToLoad").files;
-     alert(filesSelected.length);
+
      if(filesSelected.length>0)
      {
        var fileToLoad=filesSelected[0];
-       var fileReader=new fileReader();
+       var fileReader=new FileReader();
        fileReader.onload=function(fileLoadedEvent)
        {
          var scrData=fileLoadedEvent.target.result;
