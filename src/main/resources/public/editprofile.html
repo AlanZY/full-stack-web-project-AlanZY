@@ -43,6 +43,14 @@
 
    </script>
 
+   <script>
+     var loadFile=function(event)
+     {
+       var output=document.getElementById('output');
+       output.src=URL.createObjectURL(event.target.files[0]);
+
+     };
+   </script>
 
 <script>
 /*
@@ -139,14 +147,6 @@ $(document).ready(function(){
 
 </script>
 
-<script>
-  var loadFile=function(event)
-  {
-    var output=document.getElementById('output');
-    output.src=URL.createObjectURL(event.target.files[0]);
-
-  };
-</script>
 
 
 
@@ -219,7 +219,7 @@ $(document).ready(function(){
                         <input type="file" id="inputFileToLoad" accept="image/*" onchange="loadFile(event)">
                         <!--    <img src="picture/test.jpg" id="id-image-url1-pic" alt="">   -->
                           <label id="changed_image"  ></label>
-                           <img id="output"   alt="image" src="picture/test.png"/>
+                           <img id="output"   alt="image" src="#"/>
 
                      </div>
                  </div>
