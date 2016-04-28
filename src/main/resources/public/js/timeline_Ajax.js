@@ -9,6 +9,7 @@ $(function()
       {
         alert("this is a timeline page");
         var result1=JSON.parse(result);
+        alert(result1.title1);
         $("#h1").html(result1.title1);
         $("#p1").html(result1.content1);
         var image1=document.getElementById("image1");
