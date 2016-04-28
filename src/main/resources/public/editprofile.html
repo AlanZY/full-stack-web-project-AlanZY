@@ -6,9 +6,11 @@
  <link rel="stylesheet" href="stylesheets/editprofile.css">
 <link rel="stylesheet" href="stylesheets/header.css">
 <link rel="stylesheet" href="stylesheets/footer.css">
-<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
-</script>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.6.1.min.js"></script>
+   <script type="text/javascript"></script>
+
+
+
 <script>
 /*
 function testimage(){
@@ -55,8 +57,10 @@ $(document).ready(function(){
      var ctx=canvas.getContext("2d");
      ctx.drawImage(img,0,0);
      var dataURL=canvas.toDataURL("image/png");
-  //   alert(dataURL);
-
+  //
+  console.log(dataURL);
+     dataURL=dataURL.replace('data:image/png;base64,','');
+     //alert(dataURL);
      var send=JSON.stringify({ "edit_username" : "Smith", "edit_userimage": dataURL});
      alert(send);
      $.ajax({
@@ -90,6 +94,28 @@ $(document).ready(function(){
   };
 </script>
 
+<script>
+
+$(function()
+{
+  $.ajax
+  (
+    {
+      url:"/user_image",
+      success: function(result)
+      {
+        var result1=JSON.parse(result);
+        alert(result1.user_image);
+        var base64Img=result1.user_image;
+        document.getElementById("changed_image").src='data:image/jpeg;base64,' + base64Img;
+        
+      }
+    }
+  );
+});
+
+
+</script>
 
 </head>
 
@@ -161,6 +187,7 @@ $(document).ready(function(){
             </div>
             <input type="file" accept="image/*" onchange="loadFile(event)">
             <img id="output_image"  src="picture/test.jpg" alt=""/>
+            <img id="changed_image"  src="picture/test.jpg"  alt=" "/>
 
 
         <input type="submit" id="submit_userprofile" class="btn sumbit_profile" value="Submit"  />
