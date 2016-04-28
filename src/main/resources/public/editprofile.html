@@ -217,13 +217,14 @@ $(document).ready(function(){
                  <div class="uploaded-voice-wp uploaded-cover-wp cf">
                      <div class="uploaded-voice-cover fl">
                         <!--    <img src="picture/test.jpg" id="id-image-url1-pic" alt="">   -->
-                         <label id="changed_image"></label>
+                          <label id="changed_image"   class="before_change"></label>
+                           <img id="output_image"  class="before_change" src="#" alt=""/>
                      </div>
                  </div>
             </div>
             <input type="file" id="inputFileToLoad"  onchange="loadFile(event)">
 
-            <img id="output_image"  src="picture/test.jpg" alt=""/>
+
 
 
         <input type="submit" id="submit_userprofile" class="btn sumbit_profile" value="Submit"  />
