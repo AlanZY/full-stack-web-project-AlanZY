@@ -5,14 +5,14 @@
     min-height: 100%    
 }  
 .footer{  
-   position: absolute;  
+   position:fixed;  
 
-   bottom: 0; 
+   bottom: 0px; 
    left:0;   
-   height: 100px;         
+   height: 90px;         
    
    width:100%;
-   margin-right:0;
+ 
 
 }  
 #main-content{  
