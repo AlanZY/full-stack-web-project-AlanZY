@@ -216,10 +216,11 @@ $(document).ready(function(){
 
                  <div class="uploaded-voice-wp uploaded-cover-wp cf">
                      <div class="uploaded-voice-cover fl">
+                        <input type="file" id="inputFileToLoad"  onchange="loadFile(event)">
                         <!--    <img src="picture/test.jpg" id="id-image-url1-pic" alt="">   -->
                           <label id="changed_image"   class="before_change"></label>
                            <img id="output_image"  class="after_change" src="#" alt=""/>
-                             <input type="file" id="inputFileToLoad" class="select_photo" onchange="loadFile(event)">
+
                      </div>
                  </div>
             </div>
